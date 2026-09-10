@@ -262,9 +262,9 @@ export const operatingEnvironment: EvidenceMetric[] = [
 export const productProofSurfaces = [
   {
     name: 'Operator Command Center / Essential EA Dashboard',
-    job: 'Start with what requires you.',
+    job: 'What requires attention now?',
     description:
-      'Not another dashboard showing everything. See decisions, opportunities, risks and execution failures requiring attention now.',
+      'Not another dashboard showing everything. A focused operating surface for decisions, opportunities, risks and execution failures that need action now.',
     status: 'LIVE',
     screenshotPath: '/product/command-center.webp',
     alt: 'Operator Command Center interface showing prioritized operational signals and execution work.',
@@ -272,9 +272,9 @@ export const productProofSurfaces = [
   },
   {
     name: 'Storm Signal Intelligence',
-    job: 'Find consequence inside activity.',
+    job: 'What consequential activity is hiding inside organizational noise?',
     description:
-      'Transform fragmented customer, operational, relationship and lifecycle activity into prioritized signals.',
+      'Transforms fragmented customer, operational, relationship and lifecycle activity into prioritized signals the organization can act on.',
     status: 'LIVE',
     screenshotPath: '/product/signal-intelligence.webp',
     alt: 'Storm Signal Intelligence interface showing customer and operational signals organized for action.',
@@ -282,9 +282,9 @@ export const productProofSurfaces = [
   },
   {
     name: 'Universal Client Hub',
-    job: 'Put customer context where execution happens.',
+    job: 'What context does the organization need in order to act well?',
     description:
-      'Unify relationship history, customer context, operational state and next actions without positioning Storm as a CRM replacement.',
+      'Unifies relationship history, customer context, operational state and next actions without positioning Storm as a CRM replacement.',
     status: 'LIVE',
     screenshotPath: '/product/universal-client-hub.webp',
     alt: 'Universal Client Hub interface showing relationship context and accountable next actions.',
@@ -546,7 +546,7 @@ export const founderThesis =
 export const investorStage = {
   stage: 'Early commercial validation',
   raising: '$500K',
-  instrument: 'Angel / Pre-Seed',
+  instrument: 'Angel / Pre-Seed SAFE',
   capitalPriorities: [
     'product hardening',
     'technical capacity',
@@ -571,10 +571,12 @@ export const finalQuestions = [
 ] as const;
 
 export const launchEvidenceChecklist = [
-  'Add /public/founders/kristina-spencer.jpg',
-  'Add /public/founders/monica-vasquez.jpg',
+  'Kristina real founder portrait',
+  'Monica real founder portrait',
+  'Real Operator Command Center screenshot',
+  'Real Signal Intelligence screenshot',
+  'Real Universal Client Hub screenshot',
   'Current revenue revalidation',
-  'Approved product screenshots',
-  'Approved contact route or form provider',
-  'Government claim review before public launch',
+  'Approved contact path',
+  'Legal / privacy review',
 ] as const;

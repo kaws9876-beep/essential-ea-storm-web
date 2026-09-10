@@ -80,9 +80,10 @@ export function RequestPanel({
 
       {!enabled ? (
         <p className="mt-5 text-sm leading-6 text-[color-mix(in_srgb,var(--storm-cream)_58%,transparent)]">
-          Form delivery is intentionally disabled until an approved provider or
-          contact route is connected. Use the founder introduction channel for
-          now; no information entered here is sent.
+          Contact route required before public launch. Form delivery is
+          intentionally disabled until an approved email, calendar URL, request
+          form, or CRM endpoint is connected; no information entered here is
+          sent.
         </p>
       ) : null}
     </form>

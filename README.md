@@ -264,7 +264,7 @@ claims. It adds:
 - Founder-market-fit section for Kristina Spencer
 - Structured co-founder/team profile support for Monica Vasquez
 - Investor section with early commercial validation and $500K Angel / Pre-Seed
-  raise language
+  SAFE raise language
 - Disabled-safe investor and demo request panels
 - Final category close returning to the Four Questions
 - Launch evidence checklist for assets and claims still pending approval
