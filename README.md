@@ -263,7 +263,7 @@ claims. It adds:
 - Three disciplined government use cases
 - Founder-market-fit section for Kristina Spencer
 - Structured co-founder/team profile support for Monica Vasquez
-- Investor section with early commercial validation and $500K Angel / Pre-Seed
+- Investor section with early commercial validation and $1M Angel / Pre-Seed
   SAFE raise language
 - Disabled-safe investor and demo request panels
 - Final category close returning to the Four Questions

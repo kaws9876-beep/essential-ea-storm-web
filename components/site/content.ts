@@ -545,7 +545,7 @@ export const founderThesis =
 
 export const investorStage = {
   stage: 'Early commercial validation',
-  raising: '$500K',
+  raising: '$1M',
   instrument: 'Angel / Pre-Seed SAFE',
   capitalPriorities: [
     'product hardening',

@@ -24,7 +24,7 @@ investor statements do not blur together.
 | Values visible inside future screenshots | PRODUCT DEMO DATA | Future founder-approved sanitized screenshots | Depends on approved asset | Not public until assets exist | Screenshot values must not be converted into validated outcomes unless separately approved. |
 | AI Storm OS Gov is development-stage architecture | GOVERNMENT DEVELOPMENT / MATURITY | Phase 4/5 government boundary | Current maturity | Public | Not FedRAMP, ATO, IL4, IL5, CUI, classified, or DoD production authorized. |
 | Professional services, financial services, complex operating organizations | MARKET ESTIMATE / TARGET | Commercial market positioning in website content model | Target validation | Public as target validation | Do not present as current customers. |
-| $500K Angel / Pre-Seed SAFE raise | INVESTOR / RAISE STATEMENT | Existing investor section and Phase 5.2 brief | Current raise positioning unless changed by founder | Public | Keep unless repository content intentionally changes it. |
+| $1M Angel / Pre-Seed SAFE raise | INVESTOR / RAISE STATEMENT | Founder-confirmed September 2026 raise positioning | Current raise positioning | Public | Keep unless founder direction intentionally changes it. |
 
 ## Withheld Claims / Assets
 
