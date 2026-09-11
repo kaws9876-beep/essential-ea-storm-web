@@ -140,17 +140,28 @@ These are credibility controls, not decorative badges.
 
 ## Asset Requirements
 
-Expected future product assets live in `public/product/`:
+Approved founder assets live in `public/founders/`:
+
+- `kristina-spencer.jpg`
+- `monica-vasquez.jpg`
+
+Approved product evidence assets live in `public/product/`:
 
 - `command-center.webp`
-- `crystal-ball.webp`
 - `signal-intelligence.webp`
-- `execution.webp`
-- `verification.webp`
+- `universal-client-hub.webp`
 
-Do not fabricate production screenshots. If an asset or product surface is not
-available, use an elegant development-only placeholder and truthfully label
-product maturity.
+Approved cinematic explanatory assets live in `public/story/`:
+
+- `crystal-ball-ingest.webp`
+- `crystal-ball-decision.webp`
+- `storm-signal-routing.webp`
+- `verification-outcome.webp`
+
+Do not fabricate production screenshots. Product screenshots prove product
+existence, but visible interface values remain product interface data unless
+separately validated as customer outcome claims. Cinematic imagery is
+conceptual visualization, not live product UI.
 
 Expected future film assets live in `public/film/`:
 
@@ -173,10 +184,9 @@ The enterprise visual language is:
 Crystal Ball -> Decision Object -> Storm -> Verification -> Organizational
 Judgment.
 
-The cinematic language may later introduce Storm as an emotional metaphor, but
-the public enterprise website should not introduce a dog, mascot, cartoon,
-character, or pet-brand cue until an approved film asset provides that narrative
-context.
+The public enterprise website uses the approved Storm signal-routing frame only
+as restrained origin-story visualization. Storm must not be presented as a
+mascot, cartoon, character, or pet-brand cue.
 
 ## Phase 3 Proof And Commercial Governance
 
@@ -199,16 +209,14 @@ outcome.
 Revenue has an internal code TODO and must be refreshed before production
 launch.
 
-Product screenshot paths are configured for:
+Product screenshot paths are configured for approved evidence assets:
 
 - Operator Command Center
-- Crystal Ball Triage
-- Signal Intelligence
-- Execution / Assignment
-- Verification / Outcome
+- Storm Signal Intelligence
+- Universal Client Hub
 
 Screenshots render publicly only when marked approved. Do not fabricate a live
-product screenshot.
+product screenshot or treat cinematic imagery as product UI.
 
 Testimonials remain development-hidden until approved customer statements,
 roles, organizations, outcomes and permission status are supplied.
@@ -267,7 +275,7 @@ claims. It adds:
   SAFE raise language
 - Disabled-safe investor and demo request panels
 - Final category close returning to the Four Questions
-- Launch evidence checklist for assets and claims still pending approval
+- Launch evidence checklist for remaining claims and launch controls
 
 Forms remain disabled until an approved provider or contact route is connected.
 No entered information is sent while `contactConfig.formsEnabled` is `false`.

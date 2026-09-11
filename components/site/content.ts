@@ -193,6 +193,25 @@ export const stormOriginStory = {
     'Storm Signal Intelligence is designed to help organizations detect consequential signals, connect them to context, and bring what matters forward for human judgment and action.',
 } as const;
 
+export const storyImages = {
+  crystalBallIngest: {
+    src: '/story/crystal-ball-ingest.webp',
+    alt: 'Cinematic visualization of illuminated information streaming into the Crystal Ball.',
+  },
+  crystalBallDecision: {
+    src: '/story/crystal-ball-decision.webp',
+    alt: 'Cinematic visualization of the Crystal Ball surrounded by decision, ownership, question and action symbols.',
+  },
+  stormSignalRouting: {
+    src: '/story/storm-signal-routing.webp',
+    alt: 'Cinematic visualization of Storm carrying signal intelligence through an illuminated environment.',
+  },
+  verificationOutcome: {
+    src: '/story/verification-outcome.webp',
+    alt: 'Cinematic visualization of signal outcomes with verification and rejection indicators.',
+  },
+} as const;
+
 export type EvidenceMetric = {
   value: string;
   label: string;
@@ -289,7 +308,7 @@ export const productProofSurfaces = [
     status: 'LIVE',
     screenshotPath: '/product/command-center.webp',
     alt: 'Operator Command Center interface showing prioritized operational signals and execution work.',
-    screenshotApproved: false,
+    screenshotApproved: true,
   },
   {
     name: 'Storm Signal Intelligence',
@@ -299,7 +318,7 @@ export const productProofSurfaces = [
     status: 'LIVE',
     screenshotPath: '/product/signal-intelligence.webp',
     alt: 'Storm Signal Intelligence interface showing customer and operational signals organized for action.',
-    screenshotApproved: false,
+    screenshotApproved: true,
   },
   {
     name: 'Universal Client Hub',
@@ -309,7 +328,7 @@ export const productProofSurfaces = [
     status: 'LIVE',
     screenshotPath: '/product/universal-client-hub.webp',
     alt: 'Universal Client Hub interface showing relationship context and accountable next actions.',
-    screenshotApproved: false,
+    screenshotApproved: true,
   },
 ] as const;
 
@@ -538,7 +557,7 @@ export const governmentUseCases = [
 export const founderProfile = {
   name: 'Kristina Spencer',
   title: 'Co-Founder & CEO',
-  headshot: null,
+  headshot: '/founders/kristina-spencer.jpg',
   headshotAlt: 'Kristina Spencer, Co-Founder and CEO of Essential EA.',
   shortBio:
     'Decision architecture, customer discovery, operations and go-to-market.',
@@ -556,7 +575,7 @@ export const teamProfiles = [
     roleNote:
       'Product architecture, AI systems, integrations and implementation. Monica turns operational problems into intelligent systems, integration architecture and executable product infrastructure.',
     proofPoints: ['Systems architect', 'Real-estate operator', 'Relentless problem solver'],
-    headshot: null,
+    headshot: '/founders/monica-vasquez.jpg',
     headshotAlt: 'Monica Vasquez, Co-Founder and CTO of Essential EA.',
     approved: true,
   },
@@ -593,11 +612,6 @@ export const finalQuestions = [
 ] as const;
 
 export const launchEvidenceChecklist = [
-  'Kristina real founder portrait',
-  'Monica real founder portrait',
-  'Real Operator Command Center screenshot',
-  'Real Signal Intelligence screenshot',
-  'Real Universal Client Hub screenshot',
   'Current revenue revalidation',
   'Approved contact path',
   'Legal / privacy review',

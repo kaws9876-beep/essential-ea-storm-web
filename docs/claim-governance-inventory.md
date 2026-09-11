@@ -19,13 +19,13 @@ and investor statements do not blur together.
 | Annual production increased from approximately 400 closings to 500+ | CUSTOMER OUTCOME | The Schrader Group approved transformation metric | 12-month transformation | Public | Do not claim Essential EA alone caused every additional closing. |
 | 6,500 existing opportunities uncovered | CUSTOMER OUTCOME | The Schrader Group approved transformation metric | 12-month transformation | Public | Existing opportunities surfaced inside the database; not newly generated leads. |
 | 6-8 hours returned per department per week | CUSTOMER OUTCOME | The Schrader Group approved transformation metric | 12-month transformation | Public | Do not convert to annual dollar value without a defensible methodology. |
-| Operator Command Center / Essential EA Dashboard is live | PRODUCT CAPABILITY | Product surface listed in content model | Current product maturity | Public, screenshots withheld | Requires approved sanitized screenshot before visual proof is complete. |
-| Storm Signal Intelligence is live | PRODUCT CAPABILITY | Product surface listed in content model | Current product maturity | Public, screenshots withheld | Requires approved sanitized screenshot before visual proof is complete. |
-| Universal Client Hub is live | PRODUCT CAPABILITY | Product surface listed in content model | Current product maturity | Public, screenshots withheld | Requires approved sanitized screenshot before visual proof is complete. |
-| Values visible inside future screenshots | PRODUCT DEMO DATA | Future founder-approved sanitized screenshots | Depends on approved asset | Not public until assets exist | Screenshot values must not be converted into validated outcomes unless separately approved. |
-| Real founder portraits | APPROVED FOUNDER EVIDENCE | Founder-supplied portraits expected at `public/founders/kristina-spencer.jpg` and `public/founders/monica-vasquez.jpg` | Pending supplied assets | Withheld | Portrait files are not present in the repository, so the site retains safe portrait-pending treatments. |
-| Real product screenshots | PRODUCT CAPABILITY / PRODUCT EVIDENCE | Founder-approved screenshots expected at `public/product/command-center.webp`, `public/product/signal-intelligence.webp`, and `public/product/universal-client-hub.webp` | Pending supplied assets | Withheld | Product proof slots remain honest until real approved files are present. |
-| Cinematic frames | CONCEPTUAL / EXPLANATORY VISUALIZATION | Founder-supplied cinematic frames expected for architecture explanation | Pending supplied assets | Withheld | Cinematic images are explanatory visualizations and are not screenshots of the live application. |
+| Operator Command Center / Essential EA Dashboard is live | PRODUCT CAPABILITY / PRODUCT EVIDENCE | Founder-approved product screenshot at `public/product/command-center.webp` | Current product maturity | Public | Visible interface values are product interface data, not independently validated customer outcomes. |
+| Storm Signal Intelligence is live | PRODUCT CAPABILITY / PRODUCT EVIDENCE | Founder-approved product screenshot at `public/product/signal-intelligence.webp` | Current product maturity | Public | Visible interface values are product interface data, not independently validated customer outcomes. |
+| Universal Client Hub is live | PRODUCT CAPABILITY / PRODUCT EVIDENCE | Founder-approved product screenshot at `public/product/universal-client-hub.webp` | Current product maturity | Public | Visible interface values are product interface data, not independently validated customer outcomes. |
+| Visible screenshot values | PRODUCT INTERFACE DATA | Founder-approved product screenshots | Current product interface evidence | Public as interface data | Screenshot values must not be converted into validated outcomes unless separately approved. |
+| Real founder portraits | APPROVED FOUNDER EVIDENCE | Founder-supplied portraits at `public/founders/kristina-spencer.jpg` and `public/founders/monica-vasquez.jpg` | Current approved website evidence | Public | Portraits are individual professional founder assets with equal visual prominence. |
+| Real product screenshots | PRODUCT CAPABILITY / PRODUCT EVIDENCE | Founder-approved screenshots at `public/product/command-center.webp`, `public/product/signal-intelligence.webp`, and `public/product/universal-client-hub.webp` | Current approved website evidence | Public | Product proof slots render real approved interface evidence. |
+| Four cinematic frames | CONCEPTUAL / EXPLANATORY VISUALIZATION | Founder-supplied cinematic frames at `public/story/crystal-ball-ingest.webp`, `public/story/crystal-ball-decision.webp`, `public/story/storm-signal-routing.webp`, and `public/story/verification-outcome.webp` | Current approved website visualization | Public | Cinematic imagery is explanatory visualization and is not live product UI. |
 | Storm origin story | FOUNDER / PRODUCT ORIGIN NARRATIVE | Founder-approved Phase 5.2A narrative direction | Current origin narrative | Public | Story is limited to signal recognition and does not disclose medical information or portray Storm as a mascot. |
 | AI Storm OS Gov is development-stage architecture | GOVERNMENT DEVELOPMENT / MATURITY | Phase 4/5 government boundary | Current maturity | Public | Not FedRAMP, ATO, IL4, IL5, CUI, classified, or DoD production authorized. |
 | Professional services, financial services, complex operating organizations | MARKET ESTIMATE / TARGET | Commercial market positioning in website content model | Target validation | Public as target validation | Do not present as current customers. |
@@ -33,14 +33,6 @@ and investor statements do not blur together.
 
 ## Withheld Claims / Assets
 
-- Founder headshots are withheld because `public/founders/kristina-spencer.jpg`
-  and `public/founders/monica-vasquez.jpg` are not present in the repository.
-- Product screenshots are withheld because approved sanitized screenshot files are
-  not present in `public/product`. Missing expected assets are
-  `command-center.webp`, `signal-intelligence.webp`, and
-  `universal-client-hub.webp`.
-- Cinematic frames are withheld because no supplied story assets are present in
-  `public/story` or the Phase 5.2A attachment folder.
 - Contact and request forms remain disabled because no approved backend provider
   or contact route is configured. An approved email, calendar URL, request form,
   or CRM endpoint is required before public launch.

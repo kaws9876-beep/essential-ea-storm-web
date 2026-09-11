@@ -167,7 +167,7 @@ export function FounderSection() {
   return (
     <Section id="company" tone="cream">
       <Container>
-        <div className="grid gap-14 lg:grid-cols-[0.62fr_0.38fr]">
+        <div className="grid gap-14 lg:grid-cols-[0.58fr_0.42fr]">
           <div>
             <Eyebrow className="text-[color-mix(in_srgb,var(--storm-black)_54%,transparent)]">
               Founders
@@ -197,7 +197,7 @@ export function FounderSection() {
               </p>
             </div>
           </div>
-          <FounderProfile />
+          <FounderPortraits />
         </div>
 
         <Divider className="my-14" />
@@ -215,34 +215,67 @@ export function FounderSection() {
   );
 }
 
-function FounderProfile() {
+function FounderPortraits() {
   return (
-    <aside className="self-end border-y border-[color-mix(in_srgb,var(--storm-black)_16%,transparent)] py-8">
-      {founderProfile.headshot ? (
-        <Image
-          alt={founderProfile.headshotAlt}
-          className="mb-8 aspect-[4/5] w-full border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] object-cover"
-          height={1000}
-          loading="lazy"
-          src={founderProfile.headshot}
-          width={800}
+    <aside className="grid gap-px self-end bg-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+      <FounderCard
+        alt={founderProfile.headshotAlt}
+        bio={founderProfile.shortBio}
+        headshot={founderProfile.headshot}
+        name={founderProfile.name}
+        proofPoints={founderProfile.proofPoints}
+        title={founderProfile.title}
+      />
+      {teamProfiles.map((profile) => (
+        <FounderCard
+          alt={profile.headshotAlt}
+          bio={profile.roleNote}
+          headshot={profile.headshot}
+          key={profile.name}
+          name={profile.name}
+          proofPoints={profile.proofPoints}
+          title={profile.title}
         />
-      ) : (
-        <div className="mb-8 flex aspect-[4/5] items-end border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] bg-[color-mix(in_srgb,var(--storm-black)_5%,var(--storm-cream))] p-6">
-          <p className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-black)_48%,transparent)]">
-            Founder portrait pending approval
-          </p>
-        </div>
-      )}
-      <p className="font-serif text-5xl leading-none">{founderProfile.name}</p>
-      <p className="mt-3 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-black)_58%,transparent)]">
-        {founderProfile.title}
+      ))}
+    </aside>
+  );
+}
+
+function FounderCard({
+  alt,
+  bio,
+  headshot,
+  name,
+  proofPoints,
+  title,
+}: {
+  alt: string;
+  bio: string;
+  headshot: string;
+  name: string;
+  proofPoints: readonly string[];
+  title: string;
+}) {
+  return (
+    <article className="bg-[var(--storm-cream)] p-5">
+      <Image
+        alt={alt}
+        className="aspect-[4/5] w-full border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] object-cover object-top"
+        height={1000}
+        loading="lazy"
+        src={headshot}
+        unoptimized
+        width={800}
+      />
+      <h2 className="mt-8 font-serif text-4xl leading-none">{name}</h2>
+      <p className="mt-3 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-black)_58%,transparent)]">
+        {title}
       </p>
-      <p className="mt-8 text-base leading-7 text-[color-mix(in_srgb,var(--storm-black)_68%,transparent)]">
-        {founderProfile.shortBio}
+      <p className="mt-6 text-base leading-7 text-[color-mix(in_srgb,var(--storm-black)_68%,transparent)]">
+        {bio}
       </p>
       <ul className="mt-6 grid gap-2">
-        {founderProfile.proofPoints.map((point) => (
+        {proofPoints.map((point) => (
           <li
             className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-black)_56%,transparent)]"
             key={point}
@@ -251,8 +284,7 @@ function FounderProfile() {
           </li>
         ))}
       </ul>
-      <Disclosure>{founderProfile.founderMarketFit}</Disclosure>
-    </aside>
+    </article>
   );
 }
 
@@ -271,22 +303,6 @@ function TeamArchitecture() {
       <div className="grid gap-px bg-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] sm:grid-cols-2">
         {teamProfiles.map((profile) => (
           <article className="bg-[var(--storm-cream)] p-6" key={profile.name}>
-            {profile.headshot ? (
-              <Image
-                alt={profile.headshotAlt}
-                className="mb-8 aspect-[4/5] w-full border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] object-cover"
-                height={1000}
-                loading="lazy"
-                src={profile.headshot}
-                width={800}
-              />
-            ) : (
-              <div className="mb-8 flex aspect-[4/5] items-end border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] bg-[color-mix(in_srgb,var(--storm-black)_5%,var(--storm-cream))] p-6">
-                <p className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-black)_48%,transparent)]">
-                  Co-founder portrait pending approval
-                </p>
-              </div>
-            )}
             <StatusChip>Approved Team Profile</StatusChip>
             <h3 className="mt-10 font-serif text-4xl leading-none">
               {profile.name}
@@ -309,6 +325,9 @@ function TeamArchitecture() {
             </ul>
           </article>
         ))}
+        <article className="bg-[var(--storm-cream)] p-6">
+          <Disclosure>{founderProfile.founderMarketFit}</Disclosure>
+        </article>
       </div>
     </div>
   );

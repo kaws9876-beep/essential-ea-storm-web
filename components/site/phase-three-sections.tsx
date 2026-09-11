@@ -132,22 +132,15 @@ export function ProductProofSection() {
               key={surface.name}
             >
               <div className="relative overflow-hidden border border-[color-mix(in_srgb,var(--storm-cream)_10%,transparent)] bg-[var(--storm-black)]">
-                {surface.screenshotApproved ? (
-                  <Image
-                    alt={surface.alt}
-                    className="aspect-[16/10] h-full w-full object-cover object-left-top"
-                    height={750}
-                    loading="lazy"
-                    src={surface.screenshotPath}
-                    width={1200}
-                  />
-                ) : (
-                  <div className="flex aspect-[16/10] items-end p-5">
-                    <p className="font-sans text-[0.62rem] font-semibold uppercase leading-5 tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_42%,transparent)]">
-                      Approved screenshot pending
-                    </p>
-                  </div>
-                )}
+                <Image
+                  alt={surface.alt}
+                  className="aspect-[16/10] h-full w-full object-cover object-left-top"
+                  height={750}
+                  loading="lazy"
+                  src={surface.screenshotPath}
+                  unoptimized
+                  width={1200}
+                />
               </div>
               <div className="mt-6">
                 <StatusChip
@@ -169,8 +162,9 @@ export function ProductProofSection() {
           ))}
         </div>
         <Disclosure>
-          Product screenshots are hidden until founder-approved image files are
-          present in the repository.
+          Product screenshots show approved interface evidence. Visible values
+          inside the images remain product interface data unless separately
+          validated as customer outcome claims.
         </Disclosure>
       </Container>
     </Section>
