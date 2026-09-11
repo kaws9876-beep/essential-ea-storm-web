@@ -147,18 +147,18 @@ export const lifecycleSteps = [
   },
   {
     step: '06',
-    label: 'Owner',
-    body: 'Responsibility becomes explicit.',
+    label: 'Capability Selection',
+    body: 'Storm determines the appropriate execution capability based on context, authority, governance and task requirements.',
   },
   {
     step: '07',
-    label: 'Execute',
-    body: 'Human, AI, workflow or connected system carries out the authorized action.',
+    label: 'Execution',
+    body: 'The authorized human, AI model, AI agent, workflow, software system, API or decision engine carries out the work.',
   },
   {
     step: '08',
-    label: 'Verify',
-    body: "Assignment isn't completion.",
+    label: 'Verification',
+    body: "Assignment isn't completion. Storm checks whether the intended action or outcome actually occurred.",
   },
   {
     step: '09',
@@ -167,10 +167,31 @@ export const lifecycleSteps = [
   },
   {
     step: '10',
-    label: 'Learn',
+    label: 'Memory / Learning',
     body: 'The outcome becomes part of organizational judgment.',
   },
 ] as const;
+
+export const capabilityTypes = [
+  'Human',
+  'AI model',
+  'AI agent',
+  'Workflow',
+  'Software system',
+  'API',
+  'Decision engine',
+] as const;
+
+export const stormOriginStory = {
+  eyebrow: 'The Intelligence Behind the Name',
+  title: 'Signal recognition is the idea at the center of Storm.',
+  body:
+    "Storm is Monica's service animal. Her work depends on something deceptively powerful: noticing signals, recognizing when they matter, and bringing the right signal forward at the right moment.",
+  bridge:
+    "That principle helped inspire Storm Signal Intelligence. Organizations are surrounded by signals every day inside conversations, relationships, workflows, systems and data. The problem is not the absence of information. It is recognizing what matters before the moment passes.",
+  closing:
+    'Storm Signal Intelligence is designed to help organizations detect consequential signals, connect them to context, and bring what matters forward for human judgment and action.',
+} as const;
 
 export type EvidenceMetric = {
   value: string;
@@ -441,6 +462,7 @@ export const stackLayers = [
       'Crystal Ball Triage',
       'Decision Objects',
       'Authority Graph',
+      'Capability Selection',
       'Execution',
       'Verification',
       'Organizational Judgment',

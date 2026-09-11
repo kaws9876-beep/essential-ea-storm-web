@@ -1,8 +1,10 @@
 import {
+  capabilityTypes,
   crystalBallQuestions,
   fourQuestions,
   lifecycleSteps,
   organizationalSignals,
+  stormOriginStory,
 } from '@/components/site/content';
 import {
   Container,
@@ -234,7 +236,7 @@ export function StormLifecycleSection() {
             <article
               className={cn(
                 'lifecycle-step min-h-64 bg-[var(--storm-black)] p-5',
-                item.label === 'Verify' &&
+                item.label === 'Verification' &&
                   'bg-[color-mix(in_srgb,var(--storm-gold)_8%,var(--storm-black))]',
               )}
               key={item.label}
@@ -246,7 +248,7 @@ export function StormLifecycleSection() {
               <h2
                 className={cn(
                   'mt-8 font-sans text-[0.78rem] font-semibold uppercase tracking-[0.14em]',
-                  ['Owner', 'Verify'].includes(item.label)
+                  ['Capability Selection', 'Verification'].includes(item.label)
                     ? 'text-[var(--storm-gold)]'
                     : 'text-[var(--storm-cream)]',
                 )}
@@ -271,6 +273,57 @@ export function StormLifecycleSection() {
             <p className="mt-7 text-xl leading-9 text-[color-mix(in_srgb,var(--storm-cream)_72%,transparent)]">
               Did it happen? Did it work? What should the organization learn?
             </p>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-8 border-b border-[color-mix(in_srgb,var(--storm-cream)_14%,transparent)] pb-12 lg:grid-cols-[0.36fr_0.64fr]">
+          <div>
+            <Eyebrow className="text-[color-mix(in_srgb,var(--storm-cream)_54%,transparent)]">
+              Provider-Neutral Execution
+            </Eyebrow>
+            <p className="mt-5 max-w-sm text-base leading-7 text-[color-mix(in_srgb,var(--storm-cream)_66%,transparent)]">
+              Storm does not assume AI is always the right executor. After
+              authority is established, the system determines which capability
+              should act.
+            </p>
+          </div>
+          <div className="grid gap-px bg-[color-mix(in_srgb,var(--storm-cream)_12%,transparent)] sm:grid-cols-2 lg:grid-cols-4">
+            {capabilityTypes.map((capability) => (
+              <p
+                className="bg-[var(--storm-black)] p-4 font-sans text-[0.66rem] font-semibold uppercase leading-5 tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_72%,transparent)]"
+                key={capability}
+              >
+                {capability}
+              </p>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+  );
+}
+
+export function StormOriginSection() {
+  return (
+    <Section tone="cream" className="py-16 sm:py-24">
+      <Container>
+        <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr]">
+          <div>
+            <Eyebrow className="text-[color-mix(in_srgb,var(--storm-black)_54%,transparent)]">
+              {stormOriginStory.eyebrow}
+            </Eyebrow>
+            <EditorialHeadline className="mt-8 text-[clamp(2.9rem,5.7vw,6.2rem)]">
+              {stormOriginStory.title}
+            </EditorialHeadline>
+          </div>
+          <div className="self-end">
+            <p className="text-xl leading-9 text-[color-mix(in_srgb,var(--storm-black)_70%,transparent)]">
+              {stormOriginStory.body}
+            </p>
+            <p className="mt-7 text-lg leading-8 text-[color-mix(in_srgb,var(--storm-black)_66%,transparent)]">
+              {stormOriginStory.bridge}
+            </p>
+            <Disclosure>{stormOriginStory.closing}</Disclosure>
           </div>
         </div>
       </Container>

@@ -2,8 +2,9 @@
 
 This inventory supports the Phase 5 website audit. It separates public claims by
 claim class so company traction, customer operating scale, customer outcomes,
-product capability, product demo data, government maturity, market targets, and
-investor statements do not blur together.
+product capability, product evidence, interface data, government maturity,
+market targets, founder evidence, explanatory visualization, origin narrative,
+and investor statements do not blur together.
 
 | Claim | Category | Source / Basis | Time Period | Public Status | Notes |
 | --- | --- | --- | --- | --- | --- |
@@ -22,6 +23,10 @@ investor statements do not blur together.
 | Storm Signal Intelligence is live | PRODUCT CAPABILITY | Product surface listed in content model | Current product maturity | Public, screenshots withheld | Requires approved sanitized screenshot before visual proof is complete. |
 | Universal Client Hub is live | PRODUCT CAPABILITY | Product surface listed in content model | Current product maturity | Public, screenshots withheld | Requires approved sanitized screenshot before visual proof is complete. |
 | Values visible inside future screenshots | PRODUCT DEMO DATA | Future founder-approved sanitized screenshots | Depends on approved asset | Not public until assets exist | Screenshot values must not be converted into validated outcomes unless separately approved. |
+| Real founder portraits | APPROVED FOUNDER EVIDENCE | Founder-supplied portraits expected at `public/founders/kristina-spencer.jpg` and `public/founders/monica-vasquez.jpg` | Pending supplied assets | Withheld | Portrait files are not present in the repository, so the site retains safe portrait-pending treatments. |
+| Real product screenshots | PRODUCT CAPABILITY / PRODUCT EVIDENCE | Founder-approved screenshots expected at `public/product/command-center.webp`, `public/product/signal-intelligence.webp`, and `public/product/universal-client-hub.webp` | Pending supplied assets | Withheld | Product proof slots remain honest until real approved files are present. |
+| Cinematic frames | CONCEPTUAL / EXPLANATORY VISUALIZATION | Founder-supplied cinematic frames expected for architecture explanation | Pending supplied assets | Withheld | Cinematic images are explanatory visualizations and are not screenshots of the live application. |
+| Storm origin story | FOUNDER / PRODUCT ORIGIN NARRATIVE | Founder-approved Phase 5.2A narrative direction | Current origin narrative | Public | Story is limited to signal recognition and does not disclose medical information or portray Storm as a mascot. |
 | AI Storm OS Gov is development-stage architecture | GOVERNMENT DEVELOPMENT / MATURITY | Phase 4/5 government boundary | Current maturity | Public | Not FedRAMP, ATO, IL4, IL5, CUI, classified, or DoD production authorized. |
 | Professional services, financial services, complex operating organizations | MARKET ESTIMATE / TARGET | Commercial market positioning in website content model | Target validation | Public as target validation | Do not present as current customers. |
 | $1M Angel / Pre-Seed SAFE raise | INVESTOR / RAISE STATEMENT | Founder-confirmed September 2026 raise positioning | Current raise positioning | Public | Keep unless founder direction intentionally changes it. |
@@ -34,6 +39,8 @@ investor statements do not blur together.
   not present in `public/product`. Missing expected assets are
   `command-center.webp`, `signal-intelligence.webp`, and
   `universal-client-hub.webp`.
+- Cinematic frames are withheld because no supplied story assets are present in
+  `public/story` or the Phase 5.2A attachment folder.
 - Contact and request forms remain disabled because no approved backend provider
   or contact route is configured. An approved email, calendar URL, request form,
   or CRM endpoint is required before public launch.

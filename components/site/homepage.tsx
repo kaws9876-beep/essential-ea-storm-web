@@ -8,6 +8,7 @@ import {
   FourQuestionsSection,
   LearningLoopSection,
   StormLifecycleSection,
+  StormOriginSection,
 } from '@/components/site/phase-two-sections';
 import {
   CaseStudySection,
@@ -168,6 +169,7 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
         <BrainExecutionSection />
         <CrystalBallSection />
         <StormLifecycleSection />
+        <StormOriginSection />
         <LearningLoopSection />
         <ProductProofSection />
         <ProofSection />
