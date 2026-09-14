@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Container, Divider } from '@/components/site/primitives';
 
-export function Footer() {
+export function Footer({ sectionHrefPrefix = '' }: { sectionHrefPrefix?: string }) {
   return (
     <footer className="bg-[var(--storm-black)] py-14 text-[var(--storm-cream)]">
       <Container>
@@ -24,26 +24,29 @@ export function Footer() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_62%,transparent)]">
-            <Link href="#brain-execution" className="hover:text-[var(--storm-cream)]">
+            <Link href={`${sectionHrefPrefix}#brain-execution`} className="hover:text-[var(--storm-cream)]">
               Platform
             </Link>
-            <Link href="#commercial" className="hover:text-[var(--storm-cream)]">
+            <Link href={`${sectionHrefPrefix}#commercial`} className="hover:text-[var(--storm-cream)]">
               Commercial
             </Link>
-            <Link href="#government" className="hover:text-[var(--storm-cream)]">
+            <Link href={`${sectionHrefPrefix}#government`} className="hover:text-[var(--storm-cream)]">
               Government
             </Link>
-            <Link href="#proof" className="hover:text-[var(--storm-cream)]">
+            <Link href={`${sectionHrefPrefix}#proof`} className="hover:text-[var(--storm-cream)]">
               Proof
             </Link>
-            <Link href="#company" className="hover:text-[var(--storm-cream)]">
+            <Link href={`${sectionHrefPrefix}#company`} className="hover:text-[var(--storm-cream)]">
               Company
             </Link>
-            <Link href="#investors" className="hover:text-[var(--storm-cream)]">
+            <Link href={`${sectionHrefPrefix}#investors`} className="hover:text-[var(--storm-cream)]">
               Investors
             </Link>
-            <Link href="#contact" className="hover:text-[var(--storm-cream)]">
+            <Link href={`${sectionHrefPrefix}#contact`} className="hover:text-[var(--storm-cream)]">
               Contact
+            </Link>
+            <Link href="/privacy" className="hover:text-[var(--storm-cream)]">
+              Privacy
             </Link>
           </div>
         </div>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Container, ButtonLink } from '@/components/site/primitives';
 import { contactConfig, navItems } from '@/components/site/content';
 
-export function Header() {
+export function Header({ sectionHrefPrefix = '' }: { sectionHrefPrefix?: string }) {
   return (
     <header className="sticky top-0 z-50 bg-[color-mix(in_srgb,var(--storm-black)_94%,transparent)] text-[var(--storm-cream)] backdrop-blur-md">
       <Container className="hidden min-h-9 items-center justify-between border-b border-[color-mix(in_srgb,var(--storm-cream)_10%,transparent)] font-sans text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_48%,transparent)] lg:flex">
@@ -22,7 +22,7 @@ export function Header() {
           {navItems.map((item) => (
             <Link
               className="font-sans text-[0.7rem] uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_68%,transparent)] transition hover:text-[var(--storm-cream)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--storm-gold)]"
-              href={item.href}
+              href={`${sectionHrefPrefix}${item.href}`}
               key={item.href}
             >
               {item.label}

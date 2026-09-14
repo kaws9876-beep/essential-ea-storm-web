@@ -98,6 +98,7 @@ Components must support black and cream environments and keep gold rare.
 - `/`: complete single-page company and product website
 - `/penfed`: campaign entry route that prepares the `penfed_entry` event and
   renders the same premium website experience with campaign attribution
+- `/privacy`: public Privacy Policy for essentialaistorm.com
 
 Reserved future route architecture:
 
@@ -279,6 +280,16 @@ claims. It adds:
 
 Embedded form submission remains disabled. Demo and investor conversion panels
 route to the approved external public destinations.
+
+## Launch Privacy Control
+
+The public Privacy Policy is implemented at `/privacy` with
+privacy@essentialaistorm.com as the canonical privacy contact for
+essentialaistorm.com.
+
+This implementation does not represent attorney certification or legal
+approval. Final founder/legal pre-deployment review remains required before
+public launch.
 
 ## Phase 5 Evidence Integration
 
