@@ -235,27 +235,28 @@ export const companyTraction: EvidenceMetric[] = [
     status: 'FACT',
     claimClass: 'COMPANY TRACTION',
     verified: true,
-    sourceNote: 'Founder-provided traction placeholder pending final production verification.',
-    lastValidated: 'Founder verification required before launch',
+    sourceNote: 'Founder-validated September 14, 2026 company traction.',
+    lastValidated: 'Founder-validated September 14, 2026',
   },
   {
-    value: '~30',
-    label: 'Users',
+    value: '65',
+    label: 'Current Users',
     status: 'FACT',
     claimClass: 'COMPANY TRACTION',
     verified: true,
-    sourceNote: 'Founder-provided traction placeholder pending final production verification.',
-    lastValidated: 'Founder verification required before launch',
+    sourceNote:
+      'Founder-validated September 14, 2026; current users are distributed across the company\'s two paying customer organizations.',
+    lastValidated: 'Founder-validated September 14, 2026',
   },
   {
-    value: '$24K+',
-    label: 'Revenue at Last Validated Reporting Point',
+    value: '$30K',
+    label: 'Revenue to Date',
     status: 'FACT',
     claimClass: 'COMPANY TRACTION',
     verified: true,
-    // TODO: REVALIDATE COMPANY REVENUE IMMEDIATELY BEFORE PUBLIC PRODUCTION LAUNCH.
-    sourceNote: 'Revenue must be refreshed before production launch.',
-    lastValidated: 'Founder verification required before launch',
+    sourceNote:
+      'Founder-validated September 14, 2026 actual Essential EA + AI Storm OS company revenue to date; excludes pipeline, projected revenue, unearned contract value, customer transaction volume, customer savings and customer economic outcomes.',
+    lastValidated: 'Founder-validated September 14, 2026',
   },
 ];
 
@@ -614,6 +615,5 @@ export const finalQuestions = [
 ] as const;
 
 export const launchEvidenceChecklist = [
-  'Current revenue revalidation',
   'Legal / privacy review',
 ] as const;

@@ -117,7 +117,7 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
               {[
                 ['Product Exists', 'Live commercial surfaces'],
                 ['Proof Exists', 'The Schrader Group case study'],
-                ['Traction Exists', '2 paying customers / ~30 users'],
+                ['Traction Exists', '2 Paying Customers / 65 Current Users / $30K Revenue to Date'],
               ].map(([label, value]) => (
                 <div className="bg-[var(--storm-black)] p-4" key={label}>
                   <p className="font-sans text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-[var(--storm-gold)]">

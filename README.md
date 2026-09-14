@@ -206,8 +206,8 @@ Company traction is separated from design-partner operating environment scale.
 Customer-environment scale must not be presented as Storm-attributed business
 outcome.
 
-Revenue has an internal code TODO and must be refreshed before production
-launch.
+Public company traction has been founder-validated as of September 14, 2026:
+2 Paying Customers, 65 Current Users, and $30K Revenue to Date.
 
 Product screenshot paths are configured for approved evidence assets:
 

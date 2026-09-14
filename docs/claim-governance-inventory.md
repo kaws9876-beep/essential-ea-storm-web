@@ -8,9 +8,9 @@ and investor statements do not blur together.
 
 | Claim | Category | Source / Basis | Time Period | Public Status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| 2 paying customers | COMPANY TRACTION | Founder-provided traction metric in Phase 5 brief and content model | Current as last founder validation | Public with verification note | Revalidate immediately before production launch. |
-| ~30 users | COMPANY TRACTION | Founder-provided traction metric in Phase 5 brief and content model | Current as last founder validation | Public with verification note | Revalidate immediately before production launch. |
-| $24K+ revenue at last validated reporting point | COMPANY TRACTION | Existing approved repository metric | Last validated reporting point | Public with verification note | Do not silently treat as current revenue until founder refreshes it. |
+| 2 Paying Customers | COMPANY TRACTION | Founder-validated September 14, 2026 | Current company traction | Public | Company traction; separate from customer operating environment and customer transformation results. |
+| 65 Current Users | COMPANY TRACTION | Founder-validated September 14, 2026 | Current company traction | Public | Current users are distributed across the company's two paying customer organizations. |
+| $30K Revenue to Date | COMPANY TRACTION | Founder-validated September 14, 2026 | Current company traction | Public | Actual Essential EA + AI Storm OS company revenue to date; excludes pipeline, projected revenue, unearned contract value, customer transaction volume, customer savings and customer economic outcomes. |
 | 31,727 deduplicated contacts | CUSTOMER OPERATING ENVIRONMENT | The Schrader Group approved operating-environment metric | Historical customer operating environment | Public | Not a company traction metric. |
 | 8,525 historical closings | CUSTOMER OPERATING ENVIRONMENT | The Schrader Group approved operating-environment metric | Historical customer operating environment | Public | Not a 12-month transformation result. |
 | $1.86B historical transaction volume | CUSTOMER OPERATING ENVIRONMENT | The Schrader Group approved operating-environment metric | Approximately 30 years | Public | Presented as historical scale, not current revenue. |
