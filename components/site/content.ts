@@ -600,8 +600,10 @@ export const investorStage = {
 
 export const contactConfig = {
   formsEnabled: false,
-  investorFallbackHref: '#request-demo',
-  demoFallbackHref: '#request-demo',
+  demoHref: 'https://calendar.app.google/rj3NJFsePJbs99XP9',
+  investorHref: 'https://forms.gle/sruxD4USyofXMpRh8',
+  investorFallbackHref: 'https://forms.gle/sruxD4USyofXMpRh8',
+  demoFallbackHref: 'https://calendar.app.google/rj3NJFsePJbs99XP9',
 } as const;
 
 export const finalQuestions = [
@@ -613,6 +615,5 @@ export const finalQuestions = [
 
 export const launchEvidenceChecklist = [
   'Current revenue revalidation',
-  'Approved contact path',
   'Legal / privacy review',
 ] as const;

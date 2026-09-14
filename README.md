@@ -273,12 +273,12 @@ claims. It adds:
 - Structured co-founder/team profile support for Monica Vasquez
 - Investor section with early commercial validation and $1M Angel / Pre-Seed
   SAFE raise language
-- Disabled-safe investor and demo request panels
+- Approved investor and demo conversion routes
 - Final category close returning to the Four Questions
 - Launch evidence checklist for remaining claims and launch controls
 
-Forms remain disabled until an approved provider or contact route is connected.
-No entered information is sent while `contactConfig.formsEnabled` is `false`.
+Embedded form submission remains disabled. Demo and investor conversion panels
+route to the approved external public destinations.
 
 ## Phase 5 Evidence Integration
 
@@ -303,9 +303,9 @@ Product screenshots are configured for:
 - Storm Signal Intelligence
 - Universal Client Hub
 
-Screenshots remain hidden until approved image files are supplied. Any numbers
-visible inside future screenshots must be treated as product demo data unless
-separately validated in the governed proof sections.
+Screenshots render after approved image files are supplied. Any numbers visible
+inside screenshots must be treated as product interface data unless separately
+validated in the governed proof sections.
 
-Founder and team image slots are prepared for approved assets, but the public
-site continues to use restrained fallbacks until those files exist in the repo.
+Founder and team image slots render approved individual founder portraits when
+those assets exist in the repo.

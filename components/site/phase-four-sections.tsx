@@ -356,7 +356,12 @@ export function InvestorSection() {
               {investorStage.instrument}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <ButtonLink href="#investor-interest" event="investor_click">
+              <ButtonLink
+                href={contactConfig.investorHref}
+                event="investor_click"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Request Investor Materials
               </ButtonLink>
               <ButtonLink href="#company" variant="secondary" event="investor_click">
@@ -415,6 +420,9 @@ export function InvestorSection() {
               'Optional message',
             ]}
             options={['Investor', 'Strategic Partner', 'Enterprise', 'Government', 'Other']}
+            actionEvent="investor_click"
+            actionHref={contactConfig.investorHref}
+            actionLabel="Request Investor Materials"
             enabled={contactConfig.formsEnabled}
           />
           <RequestPanel
@@ -428,6 +436,8 @@ export function InvestorSection() {
               'Primary interest',
             ]}
             options={['Commercial', 'Government', 'Investor / Partner']}
+            actionHref={contactConfig.demoHref}
+            actionLabel="Request a Demo"
             enabled={contactConfig.formsEnabled}
           />
         </div>
@@ -471,7 +481,13 @@ export function FinalCategoryClose() {
               <ButtonLink href="#signature-sequence" event="hero_demo_click">
                 See Storm in Action
               </ButtonLink>
-              <ButtonLink href="#request-demo" variant="secondary" event="platform_click">
+              <ButtonLink
+                href={contactConfig.demoHref}
+                variant="secondary"
+                event="platform_click"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Request a Demo
               </ButtonLink>
             </div>

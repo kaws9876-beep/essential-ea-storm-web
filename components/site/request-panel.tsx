@@ -1,7 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { track } from '@/lib/analytics';
+import type { AnalyticsEvent } from '@/lib/analytics';
 
 type RequestPanelProps = {
   id: string;
@@ -9,9 +11,15 @@ type RequestPanelProps = {
   fields: string[];
   options: string[];
   enabled: boolean;
+  actionHref?: string;
+  actionLabel?: string;
+  actionEvent?: AnalyticsEvent;
 };
 
 export function RequestPanel({
+  actionEvent = 'platform_click',
+  actionHref,
+  actionLabel = 'Submit Request',
   id,
   title,
   fields,
@@ -34,7 +42,7 @@ export function RequestPanel({
       <div className="flex items-start justify-between gap-5">
         <h3 className="font-serif text-4xl leading-none">{title}</h3>
         <span className="border border-current/20 px-2.5 py-1 font-sans text-[0.58rem] font-semibold uppercase leading-none tracking-[0.12em] text-current/62">
-          {enabled ? 'Open' : 'Contact Route Pending'}
+          {enabled || actionHref ? 'Open' : 'Contact Route Pending'}
         </span>
       </div>
 
@@ -70,15 +78,27 @@ export function RequestPanel({
         ))}
       </div>
 
-      <button
-        className="mt-8 inline-flex min-h-12 items-center justify-center border border-[var(--storm-cream)] bg-[var(--storm-cream)] px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[var(--storm-black)] transition hover:border-[var(--storm-gold)] hover:bg-[var(--storm-gold)] disabled:cursor-not-allowed disabled:border-current/20 disabled:bg-transparent disabled:text-current/42"
-        disabled={!enabled}
-        type="submit"
-      >
-        {submitted ? 'Request Received' : 'Submit Request'}
-      </button>
+      {actionHref ? (
+        <Link
+          className="mt-8 inline-flex min-h-12 items-center justify-center border border-[var(--storm-cream)] bg-[var(--storm-cream)] px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[var(--storm-black)] transition hover:border-[var(--storm-gold)] hover:bg-[var(--storm-gold)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--storm-gold)]"
+          data-analytics-event={actionEvent}
+          href={actionHref}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {actionLabel}
+        </Link>
+      ) : (
+        <button
+          className="mt-8 inline-flex min-h-12 items-center justify-center border border-[var(--storm-cream)] bg-[var(--storm-cream)] px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[var(--storm-black)] transition hover:border-[var(--storm-gold)] hover:bg-[var(--storm-gold)] disabled:cursor-not-allowed disabled:border-current/20 disabled:bg-transparent disabled:text-current/42"
+          disabled={!enabled}
+          type="submit"
+        >
+          {submitted ? 'Request Received' : 'Submit Request'}
+        </button>
+      )}
 
-      {!enabled ? (
+      {!enabled && !actionHref ? (
         <p className="mt-5 text-sm leading-6 text-[color-mix(in_srgb,var(--storm-cream)_58%,transparent)]">
           Contact route required before public launch. Form delivery is
           intentionally disabled until an approved email, calendar URL, request

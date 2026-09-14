@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Container, ButtonLink } from '@/components/site/primitives';
-import { navItems } from '@/components/site/content';
+import { contactConfig, navItems } from '@/components/site/content';
 
 export function Header() {
   return (
@@ -29,7 +29,13 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <ButtonLink href="#request-demo" event="platform_click" className="hidden sm:inline-flex">
+        <ButtonLink
+          href={contactConfig.demoHref}
+          event="platform_click"
+          className="hidden sm:inline-flex"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           Request Demo
         </ButtonLink>
       </Container>
