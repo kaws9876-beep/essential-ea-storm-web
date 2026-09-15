@@ -4,7 +4,6 @@ import {
   caseStudyJourney,
   categoryProofQuestions,
   commercialMarkets,
-  companyTraction,
   operatingEnvironment,
   productProofSurfaces,
   schraderCaseStudy,
@@ -26,7 +25,7 @@ import { cn } from '@/lib/utils';
 function EvidenceNumber({ metric }: { metric: EvidenceMetric }) {
   return (
     <div className="border-t border-current/16 pt-5">
-      <p className="font-serif text-[clamp(3.5rem,8vw,7.5rem)] leading-none">
+      <p className="font-serif text-[clamp(3.35rem,7.4vw,7rem)] leading-none">
         {metric.value}
       </p>
       <p className="mt-5 max-w-64 font-sans text-[0.66rem] font-semibold uppercase leading-5 tracking-[0.14em] text-current/64">
@@ -39,41 +38,129 @@ function EvidenceNumber({ metric }: { metric: EvidenceMetric }) {
   );
 }
 
+const proofSequence = [
+  {
+    eyebrow: 'Operating Transformation',
+    value: operatingEnvironment[3].value,
+    label: operatingEnvironment[3].label,
+    context:
+      'Cross-functional work was mapped, governed or automated inside the client operating environment.',
+    note: 'Customer operating environment',
+  },
+  {
+    eyebrow: 'Signal / Opportunity Intelligence',
+    value: caseStudyMetrics[2].value,
+    label: caseStudyMetrics[2].label,
+    context:
+      'Previously underutilized opportunities were identified inside the existing organization database.',
+    note: 'Observed operating outcome',
+  },
+  {
+    eyebrow: 'Execution / Outcome',
+    value: caseStudyMetrics[0].value,
+    label: caseStudyMetrics[0].label,
+    context:
+      'Technology stack cost changed during the 12-month Essential EA + AI Storm OS transformation period.',
+    note: 'Observed during transformation period',
+  },
+] as const;
+
 export function ProofSection() {
   return (
-    <Section id="proof" tone="cream">
+    <Section id="proof" tone="cream" className="py-14 sm:py-20">
       <Container>
-        <div className="grid gap-14 lg:grid-cols-[0.68fr_1.32fr]">
+        <div className="max-w-5xl">
           <div>
             <Eyebrow className="text-[color-mix(in_srgb,var(--storm-black)_54%,transparent)]">
-              Proof Architecture
+              Proof / Results
             </Eyebrow>
-            <EditorialHeadline className="mt-8 text-[clamp(3rem,6vw,6.8rem)]">
+            <EditorialHeadline className="mt-6 text-[clamp(2.75rem,4.7vw,5.15rem)]">
               Built in real operations.
               <br />
-              Not in a demo environment.
+              Proven through real use.
             </EditorialHeadline>
-          </div>
-          <div className="self-end">
-            <p className="max-w-3xl text-xl leading-9 text-[color-mix(in_srgb,var(--storm-black)_68%,transparent)]">
-              Storm separates company traction from operating-environment
-              scale, because evidence is strongest when it is disciplined.
-            </p>
           </div>
         </div>
 
-        <div className="mt-16 grid gap-14 lg:grid-cols-2">
-          <EvidenceBlock title="Company Traction" metrics={companyTraction} />
+        <div className="mt-10 border-t border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] pt-8">
+          <h2 className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color-mix(in_srgb,var(--storm-black)_50%,transparent)]">
+            Proof in Operation
+          </h2>
+          <div className="mt-7 grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
+            <p className="max-w-sm font-serif text-[clamp(2rem,3vw,3.2rem)] leading-tight">
+              The evidence is operational, not ornamental.
+            </p>
+            <div className="grid gap-px bg-[color-mix(in_srgb,var(--storm-black)_14%,transparent)]">
+              {proofSequence.map((item) => (
+                <article
+                  className="grid gap-6 bg-[var(--storm-cream)] py-6 sm:grid-cols-[0.45fr_0.55fr] sm:gap-8 sm:py-7"
+                  key={item.eyebrow}
+                >
+                  <div className="px-0 sm:pl-7">
+                    <p className="font-sans text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-[var(--storm-gold)]">
+                      {item.eyebrow}
+                    </p>
+                    <p className="mt-5 font-serif text-[clamp(3.5rem,7vw,6.8rem)] leading-none">
+                      {item.value}
+                    </p>
+                    <p className="mt-5 max-w-72 font-sans text-[0.66rem] font-semibold uppercase leading-5 tracking-[0.15em] text-[color-mix(in_srgb,var(--storm-black)_62%,transparent)]">
+                      {item.label}
+                    </p>
+                  </div>
+                  <div className="self-end px-0 sm:pr-7">
+                    <p className="max-w-xl text-lg leading-8 text-[color-mix(in_srgb,var(--storm-black)_68%,transparent)]">
+                      {item.context}
+                    </p>
+                    <p className="mt-5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-black)_44%,transparent)]">
+                      {item.note}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-14 border-t border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] pt-10">
           <EvidenceBlock
-            title="Design-Partner Operating Environment"
+            title="What We've Seen in Operation"
             metrics={operatingEnvironment}
           />
         </div>
 
+        <div className="mt-14">
+          <h2 className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color-mix(in_srgb,var(--storm-black)_50%,transparent)]">
+            Observed Outcomes During Transformation
+          </h2>
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {caseStudyMetrics.map((metric) => (
+              <EvidenceNumber key={metric.label} metric={metric} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14 grid gap-px bg-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] lg:grid-cols-3">
+          {[
+            'The opportunity already existed inside the organization.',
+            'Three robust CRMs and years of operating data still did not create shared context, clear ownership, or reliable action.',
+            'Outcomes are described as occurring during the transformation, not as controlled scientific attribution.',
+          ].map((body) => (
+            <article
+              className="bg-[var(--storm-cream)] p-6 sm:p-8"
+              key={body}
+            >
+              <p className="font-serif text-3xl leading-tight sm:text-4xl">
+                {body}
+              </p>
+            </article>
+          ))}
+        </div>
+
         <Disclosure>
-          Company traction, customer outcomes, and operating-environment scale
-          are governed separately. Dashboard values inside product screenshots
-          should be treated as product demo data unless separately validated.
+          Customer operating evidence and observed outcomes are separate from
+          Essential EA company traction. Dashboard values inside product
+          screenshots should be treated as product demo data unless separately
+          validated.
         </Disclosure>
       </Container>
     </Section>
@@ -108,64 +195,68 @@ export function ProductProofSection() {
   return (
     <Section id="product-proof">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.6fr_0.4fr]">
+        <div className="grid gap-7 lg:grid-cols-[0.56fr_0.44fr] lg:items-end">
           <div>
             <Eyebrow className="text-[var(--storm-gold)]">Product Proof</Eyebrow>
-            <EditorialHeadline className="mt-8 text-[clamp(2.85rem,5.4vw,5.9rem)]">
-              Named product surfaces.
-              <br />
-              Clear maturity signals.
+            <EditorialHeadline className="mt-6 max-w-4xl text-[clamp(2.85rem,4.8vw,5.25rem)]">
+              See the intelligence at work.
             </EditorialHeadline>
           </div>
-          <p className="self-end text-lg leading-8 text-[color-mix(in_srgb,var(--storm-cream)_70%,transparent)]">
-            Product imagery demonstrates interface quality and capability. Any
-            values visible inside screenshots are not presented as independently
-            validated outcome claims unless they also appear in the governed
-            proof sections below.
+          <p className="self-end font-sans text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_52%,transparent)]">
+            Illustrative product environment · Synthetic demo data
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {productProofSurfaces.map((surface) => (
+        <div className="mt-9 grid gap-14 sm:mt-11 lg:gap-[4.5rem]">
+          {productProofSurfaces.map((surface, index) => (
             <article
-              className="border border-[color-mix(in_srgb,var(--storm-cream)_12%,transparent)] bg-[color-mix(in_srgb,var(--storm-cream)_3%,transparent)] p-4"
+              className="product-moment grid gap-6 lg:grid-cols-[0.68fr_0.32fr] lg:items-center lg:gap-10"
               key={surface.name}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative overflow-hidden border border-[color-mix(in_srgb,var(--storm-cream)_10%,transparent)] bg-[var(--storm-black)]">
+              <figure
+                className={cn(
+                  'overflow-hidden border border-[color-mix(in_srgb,var(--storm-cream)_13%,transparent)] bg-[var(--storm-black)]',
+                  index % 2 === 1 && 'lg:order-2',
+                )}
+              >
                 <Image
                   alt={surface.alt}
                   className="aspect-[16/10] h-full w-full object-cover object-left-top"
-                  height={750}
+                  height={900}
                   loading="lazy"
                   src={surface.screenshotPath}
                   unoptimized
-                  width={1200}
+                  width={1440}
                 />
-              </div>
-              <div className="mt-6">
-                <StatusChip
-                  intent={surface.status.includes('LIVE') ? 'attention' : 'neutral'}
-                >
-                  {surface.status}
-                </StatusChip>
-                <h2 className="mt-8 font-serif text-4xl leading-none">
+                <figcaption className="border-t border-[color-mix(in_srgb,var(--storm-cream)_10%,transparent)] px-4 py-3 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.13em] text-[color-mix(in_srgb,var(--storm-cream)_46%,transparent)]">
+                  Illustrative product environment · Synthetic demo data
+                </figcaption>
+              </figure>
+              <div className="border-t border-[color-mix(in_srgb,var(--storm-cream)_14%,transparent)] pt-6 lg:pt-8">
+                <div className="flex items-center gap-3">
+                  <StatusChip
+                    intent={surface.status.includes('LIVE') ? 'attention' : 'neutral'}
+                  >
+                    {surface.status}
+                  </StatusChip>
+                  <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_42%,transparent)]">
+                    {String(index + 1).padStart(2, '0')} / 03
+                  </p>
+                </div>
+                <h2 className="mt-8 max-w-xl font-serif text-[clamp(2.35rem,4.1vw,4.75rem)] leading-[0.98]">
                   {surface.name}
                 </h2>
-                <p className="font-sans text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[var(--storm-gold)]">
+                <p className="mt-5 font-sans text-[0.66rem] font-semibold uppercase leading-5 tracking-[0.14em] text-[var(--storm-gold)]">
                   {surface.job}
                 </p>
-                <p className="mt-4 text-base leading-7 text-[color-mix(in_srgb,var(--storm-cream)_66%,transparent)]">
+                <p className="mt-5 max-w-xl text-base leading-7 text-[color-mix(in_srgb,var(--storm-cream)_68%,transparent)]">
                   {surface.description}
                 </p>
               </div>
             </article>
           ))}
         </div>
-        <Disclosure>
-          Product screenshots show approved interface evidence. Visible values
-          inside the images remain product interface data unless separately
-          validated as customer outcome claims.
-        </Disclosure>
       </Container>
     </Section>
   );
@@ -206,7 +297,7 @@ export function CaseStudySection() {
         <div className="grid gap-12 lg:grid-cols-[0.66fr_0.34fr]">
           <div>
             <Eyebrow className="text-[color-mix(in_srgb,var(--storm-black)_54%,transparent)]">
-              Case Study / The Schrader Group
+              Case Study / Client Operating Environment
             </Eyebrow>
             <EditorialHeadline className="mt-8 text-[clamp(3.2rem,6.5vw,7rem)]">
               {schraderCaseStudy.headline}
@@ -240,7 +331,7 @@ export function CaseStudySection() {
         <div className="mt-14 grid gap-px bg-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] lg:grid-cols-3">
           <StoryPanel
             title="The Setup"
-            body="The Schrader Group did not simply need more leads or another CRM. The opportunity already existed inside the organization."
+            body="The client did not simply need more leads or another CRM. The opportunity already existed inside the organization."
           />
           <StoryPanel
             title="The Conflict"
@@ -263,7 +354,7 @@ export function CaseStudySection() {
                 organizational noise to measurable execution.
               </p>
             </div>
-            <div className="grid gap-px bg-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] md:grid-cols-7">
+            <div className="grid gap-px bg-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] md:grid-cols-[repeat(auto-fit,minmax(8.75rem,1fr))]">
               {caseStudyJourney.map((item, index) => (
                 <article
                   className="bg-[var(--storm-cream)] p-4 md:min-h-56"
@@ -272,7 +363,7 @@ export function CaseStudySection() {
                   <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[var(--storm-gold)]">
                     {String(index + 1).padStart(2, '0')}
                   </p>
-                  <h2 className="mt-6 font-serif text-3xl leading-none">
+                  <h2 className="mt-6 break-words font-serif text-3xl leading-none">
                     {item.state}
                   </h2>
                   <p className="mt-5 text-sm leading-6 text-[color-mix(in_srgb,var(--storm-black)_64%,transparent)]">

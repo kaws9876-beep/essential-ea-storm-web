@@ -20,64 +20,48 @@ import { cn } from '@/lib/utils';
 
 export function FourQuestionsSection() {
   return (
-    <Section id="four-questions" tone="cream" className="py-0">
+    <Section id="four-questions" tone="cream" className="py-16 sm:py-20">
       <Container>
-        <div className="border-b border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] py-14 sm:py-20">
-          <Eyebrow className="text-[color-mix(in_srgb,var(--storm-black)_54%,transparent)]">
-            The Four Questions
-          </Eyebrow>
-          <div className="mt-7 grid gap-10 lg:grid-cols-[0.52fr_0.48fr] lg:items-end">
-            <EditorialHeadline className="text-[clamp(2.9rem,5.6vw,6.3rem)]">
+        <div className="grid gap-12 lg:grid-cols-[0.5fr_0.5fr] lg:items-center">
+          <div>
+            <Eyebrow className="text-[color-mix(in_srgb,var(--storm-black)_54%,transparent)]">
+              The Four Questions
+            </Eyebrow>
+            <EditorialHeadline className="mt-7 text-[clamp(2.8rem,5.4vw,5.8rem)]">
               The operating questions behind every consequential action.
             </EditorialHeadline>
-            <figure className="overflow-hidden border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] bg-[var(--storm-black)]">
-              <Image
-                alt={storyImages.crystalBallDecision.alt}
-                className="aspect-[16/9] w-full object-cover"
-                height={675}
-                loading="lazy"
-                src={storyImages.crystalBallDecision.src}
-                unoptimized
-                width={1200}
-              />
-              <figcaption className="border-t border-[color-mix(in_srgb,var(--storm-cream)_12%,transparent)] bg-[var(--storm-black)] px-4 py-3 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_56%,transparent)]">
-                Conceptual visualization / decision architecture
-              </figcaption>
-            </figure>
           </div>
+          <figure className="overflow-hidden border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] bg-[var(--storm-black)]">
+            <Image
+              alt={storyImages.crystalBallDecision.alt}
+              className="aspect-[16/10] w-full object-cover"
+              height={675}
+              loading="lazy"
+              src={storyImages.crystalBallDecision.src}
+              unoptimized
+              width={1200}
+            />
+          </figure>
         </div>
 
-        <div className="divide-y divide-[color-mix(in_srgb,var(--storm-black)_12%,transparent)]">
+        <div className="mt-12 grid gap-px bg-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] lg:grid-cols-4">
           {fourQuestions.map((item, index) => (
             <article
-              className="grid min-h-[52svh] items-center gap-10 py-14 lg:grid-cols-[0.38fr_0.62fr] lg:py-20"
+              className="question-tile bg-[var(--storm-cream)] p-5 sm:p-6"
               key={item.question}
+              style={{ animationDelay: `${index * 90}ms` }}
             >
               <p className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[color-mix(in_srgb,var(--storm-black)_42%,transparent)]">
                 Question {String(index + 1).padStart(2, '0')}
               </p>
-              <div>
-                <h2 className="font-serif text-[clamp(3.05rem,7vw,7.4rem)] font-medium leading-[0.94] tracking-normal">
-                  {item.question}
-                </h2>
-                <p className="mt-7 max-w-2xl text-lg leading-8 text-[color-mix(in_srgb,var(--storm-black)_68%,transparent)]">
-                  {item.body}
-                </p>
-                <p className="mt-5 max-w-2xl font-sans text-[0.72rem] font-semibold uppercase leading-5 tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-gold)_76%,var(--storm-black))]">
-                  {item.consequence}
-                </p>
-              </div>
+              <h2 className="mt-8 font-serif text-[clamp(2.45rem,4vw,4.5rem)] font-medium leading-[0.94] tracking-normal">
+                {item.question}
+              </h2>
+              <p className="mt-6 text-sm leading-6 text-[color-mix(in_srgb,var(--storm-black)_64%,transparent)]">
+                {item.consequence}
+              </p>
             </article>
           ))}
-        </div>
-
-        <div className="grid gap-10 border-t border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] py-16 lg:grid-cols-[0.58fr_0.42fr] lg:py-24">
-          <p className="font-serif text-[clamp(3rem,6vw,6.5rem)] leading-[0.96]">
-            And Storm does not stop at assignment.
-          </p>
-          <p className="self-end text-xl leading-9 text-[color-mix(in_srgb,var(--storm-black)_68%,transparent)]">
-            It follows the work through execution, verification and outcome.
-          </p>
         </div>
       </Container>
     </Section>
@@ -110,7 +94,7 @@ export function BrainExecutionSection() {
             eyebrow="The Execution System"
             title="AI Storm OS"
             words={['Route.', 'Govern.', 'Verify.', 'Learn.']}
-            body="AI Storm OS takes that intelligence forward, determining ownership and authority, coordinating the appropriate capability, verifying completion and preserving the outcome."
+            body="AI Storm OS takes governed intelligence forward through ownership, authority, capability coordination, completion verification and outcome memory."
           />
         </div>
 
@@ -175,9 +159,9 @@ export function CrystalBallSection() {
               It needs judgment at scale.
             </EditorialHeadline>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[color-mix(in_srgb,var(--storm-black)_68%,transparent)]">
-              Crystal Ball Triage is the intelligence brain inside Storm. It
-              evaluates incoming signals before they become another task, alert
-              or executive interruption.
+              Crystal Ball Triage is the judgment layer inside the AI Storm OS
+              architecture. It evaluates incoming signals before they become
+              another task, alert or executive interruption.
             </p>
             <figure className="mt-10 overflow-hidden border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] bg-[var(--storm-black)]">
               <Image
@@ -329,8 +313,8 @@ export function StormLifecycleSection() {
             </Eyebrow>
             <p className="mt-5 max-w-sm text-base leading-7 text-[color-mix(in_srgb,var(--storm-cream)_66%,transparent)]">
               Storm does not assume AI is always the right executor. After
-              authority is established, the system determines which capability
-              should act.
+              authority is established, the system routes work to the capability
+              approved to act.
             </p>
           </div>
           <div className="grid gap-px bg-[color-mix(in_srgb,var(--storm-cream)_12%,transparent)] sm:grid-cols-2 lg:grid-cols-4">
@@ -351,9 +335,9 @@ export function StormLifecycleSection() {
 
 export function StormOriginSection() {
   return (
-    <Section tone="cream" className="py-16 sm:py-24">
+    <Section id="storm-origin" tone="cream" className="py-16 sm:py-24">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr]">
+        <div className="grid gap-12 lg:grid-cols-[0.45fr_0.55fr] lg:items-center">
           <div>
             <Eyebrow className="text-[color-mix(in_srgb,var(--storm-black)_54%,transparent)]">
               {stormOriginStory.eyebrow}
@@ -362,20 +346,17 @@ export function StormOriginSection() {
               {stormOriginStory.title}
             </EditorialHeadline>
           </div>
-          <div className="self-end">
-            <figure className="mb-10 overflow-hidden border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] bg-[var(--storm-black)]">
+          <div>
+            <figure className="origin-visual mb-10 overflow-hidden border border-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] bg-[var(--storm-black)]">
               <Image
                 alt={storyImages.stormSignalRouting.alt}
-                className="aspect-[16/9] w-full object-cover"
+                className="aspect-[16/10] w-full object-cover"
                 height={675}
                 loading="lazy"
                 src={storyImages.stormSignalRouting.src}
                 unoptimized
                 width={1200}
               />
-              <figcaption className="border-t border-[color-mix(in_srgb,var(--storm-cream)_12%,transparent)] bg-[var(--storm-black)] px-4 py-3 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_56%,transparent)]">
-                Conceptual visualization / signal routing
-              </figcaption>
             </figure>
             <p className="text-xl leading-9 text-[color-mix(in_srgb,var(--storm-black)_70%,transparent)]">
               {stormOriginStory.body}

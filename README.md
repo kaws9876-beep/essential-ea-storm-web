@@ -15,7 +15,7 @@ conversion path, analytics abstraction, route structure, accessibility baseline,
 and production-ready posture.
 
 Essential EA is the company. AI Storm OS is the platform. Crystal Ball Triage is
-the intelligence brain inside Storm.
+the judgment layer inside the AI Storm OS architecture.
 
 ## Stack
 

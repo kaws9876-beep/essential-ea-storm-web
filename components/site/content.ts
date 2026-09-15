@@ -74,7 +74,7 @@ export const heroSequence = [
   {
     state: 'Executing',
     label: 'Executing',
-    detail: 'Storm carries the judgment forward',
+    detail: 'Storm executes the authorized next action',
   },
   {
     state: 'Verified',
@@ -86,12 +86,12 @@ export const heroSequence = [
 export const fourQuestions = [
   {
     question: 'What deserves attention?',
-    body: 'Thousands of signals compete for finite human attention. Storm separates activity from consequence.',
+    body: 'Thousands of signals compete for finite human attention. Crystal Ball separates activity from consequence.',
     consequence: 'Because not everything deserves equal attention.',
   },
   {
     question: 'Why now?',
-    body: 'Priority without context is just another notification. Storm evaluates timing, consequence, relationships, history and organizational context.',
+    body: 'Priority without context is just another notification. Crystal Ball evaluates timing, consequence, relationships, history and organizational context.',
     consequence: 'Because timing changes value.',
   },
   {
@@ -101,7 +101,7 @@ export const fourQuestions = [
   },
   {
     question: 'What happens next?',
-    body: 'Insight without execution leaves the organization exactly where it started. Storm turns judgment into an accountable next action.',
+    body: 'Insight without execution leaves the organization exactly where it started. Storm carries governed judgment into an accountable next action.',
     consequence: 'Because insight without execution changes nothing.',
   },
 ] as const;
@@ -128,7 +128,7 @@ export const lifecycleSteps = [
   {
     step: '02',
     label: 'Context',
-    body: 'Storm assembles relevant history, relationships, systems, workflows and organizational context.',
+    body: 'Relevant history, relationships, systems, workflows and organizational context are assembled around the signal.',
   },
   {
     step: '03',
@@ -143,12 +143,12 @@ export const lifecycleSteps = [
   {
     step: '05',
     label: 'Authority',
-    body: 'Storm evaluates organizational decision rights and approval requirements.',
+    body: 'Storm carries the Decision Object through organizational decision rights and approval requirements.',
   },
   {
     step: '06',
     label: 'Capability Selection',
-    body: 'Storm determines the appropriate execution capability based on context, authority, governance and task requirements.',
+    body: 'Storm routes the appropriate execution capability based on context, authority, governance and task requirements.',
   },
   {
     step: '07',
@@ -184,13 +184,13 @@ export const capabilityTypes = [
 
 export const stormOriginStory = {
   eyebrow: 'The Intelligence Behind the Name',
-  title: 'Signal recognition is the idea at the center of Storm.',
+  title: 'Storm inspired how we think about signals.',
   body:
     "Storm is Monica's service animal. Her work depends on something deceptively powerful: noticing signals, recognizing when they matter, and bringing the right signal forward at the right moment.",
   bridge:
     "That principle helped inspire Storm Signal Intelligence. Organizations are surrounded by signals every day inside conversations, relationships, workflows, systems and data. The problem is not the absence of information. It is recognizing what matters before the moment passes.",
   closing:
-    'Storm Signal Intelligence is designed to help organizations detect consequential signals, connect them to context, and bring what matters forward for human judgment and action.',
+    'In the platform, the roles are distinct. Crystal Ball determines what deserves attention. Storm carries authorized action through execution.',
 } as const;
 
 export const storyImages = {
@@ -267,7 +267,7 @@ export const operatingEnvironment: EvidenceMetric[] = [
     status: 'CUSTOMER EVIDENCE',
     claimClass: 'CUSTOMER OPERATING ENVIRONMENT',
     verified: true,
-    sourceNote: 'The Schrader Group operating environment scale.',
+    sourceNote: 'Client operating environment scale.',
     lastValidated: 'Founder verification required before launch',
   },
   {
@@ -276,7 +276,7 @@ export const operatingEnvironment: EvidenceMetric[] = [
     status: 'CUSTOMER EVIDENCE',
     claimClass: 'CUSTOMER OPERATING ENVIRONMENT',
     verified: true,
-    sourceNote: 'The Schrader Group historical operating environment.',
+    sourceNote: 'Client historical operating environment.',
     lastValidated: 'Founder verification required before launch',
   },
   {
@@ -286,7 +286,7 @@ export const operatingEnvironment: EvidenceMetric[] = [
     claimClass: 'CUSTOMER OPERATING ENVIRONMENT',
     verified: true,
     sourceNote:
-      'The Schrader Group historical sales volume across approximately 30 years.',
+      'Client historical sales volume across approximately 30 years.',
     lastValidated: 'Founder verification required before launch',
   },
   {
@@ -295,17 +295,17 @@ export const operatingEnvironment: EvidenceMetric[] = [
     status: 'CUSTOMER EVIDENCE',
     claimClass: 'CUSTOMER OPERATING ENVIRONMENT',
     verified: true,
-    sourceNote: 'The Schrader Group cross-functional workflow environment.',
+    sourceNote: 'Client cross-functional workflow environment.',
     lastValidated: 'Founder verification required before launch',
   },
 ];
 
 export const productProofSurfaces = [
   {
-    name: 'Operator Command Center / Essential EA Dashboard',
+    name: 'Operator Command Center',
     job: 'What requires attention now?',
     description:
-      'Not another dashboard showing everything. A focused operating surface for decisions, opportunities, risks and execution failures that need action now.',
+      'A governed operating view of what deserves attention, who owns it, and what happens next.',
     status: 'LIVE',
     screenshotPath: '/product/command-center.webp',
     alt: 'Operator Command Center interface showing prioritized operational signals and execution work.',
@@ -315,7 +315,7 @@ export const productProofSurfaces = [
     name: 'Storm Signal Intelligence',
     job: 'What consequential activity is hiding inside organizational noise?',
     description:
-      'Transforms fragmented customer, operational, relationship and lifecycle activity into prioritized signals the organization can act on.',
+      'Surfaces consequential customer, operational, relationship and lifecycle activity from fragmented organizational context so the right work can move forward.',
     status: 'LIVE',
     screenshotPath: '/product/signal-intelligence.webp',
     alt: 'Storm Signal Intelligence interface showing customer and operational signals organized for action.',
@@ -325,7 +325,7 @@ export const productProofSurfaces = [
     name: 'Universal Client Hub',
     job: 'What context does the organization need in order to act well?',
     description:
-      'Unifies relationship history, customer context, operational state and next actions without positioning Storm as a CRM replacement.',
+      'Keeps relationship history, customer context, operational state and next actions available to support informed work and decisions without positioning Storm as a CRM replacement.',
     status: 'LIVE',
     screenshotPath: '/product/universal-client-hub.webp',
     alt: 'Universal Client Hub interface showing relationship context and accountable next actions.',
@@ -337,8 +337,8 @@ export const testimonials = [
   {
     quote:
       'When I began working with Kristina, my company was fractured. My overhead was out of control, my staff were frustrated and defeated, and I felt like I had no idea what to do next. A year later, everything looks different. My GCI is up. My overhead has dropped dramatically, and that savings drove real ROI back into the business. Most importantly, my employees got their time back, time they now spend doing what they love: taking care of our clients and driving the business forward. I am deeply grateful for what The Essential EA and AI Storm OS brought back to my company.',
-    attribution: 'Dayton Schrader',
-    organization: 'The Schrader Group',
+    attribution: 'Client operator',
+    organization: 'Complex operating environment',
     status: 'CUSTOMER EVIDENCE',
   },
 ] as const;
@@ -387,12 +387,12 @@ export const caseStudyMetrics: EvidenceMetric[] = [
 ];
 
 export const schraderCaseStudy = {
-  client: 'The Schrader Group',
+  client: 'Client operating environment',
   industry: 'Real Estate',
   engagement: '12-month operational transformation',
   headline: 'From fractured to focused.',
   subhead:
-    'How The Schrader Group rebuilt its operation with Essential EA + AI Storm OS.',
+    'How a complex operating environment moved from fragmented systems toward governed execution.',
   context:
     'Essential EA + AI Storm OS helped create an intelligence and execution layer across the operation, connecting what deserved attention to accountable next action.',
   attributionBoundary:
@@ -561,7 +561,7 @@ export const founderProfile = {
   headshot: '/founders/kristina-spencer.jpg',
   headshotAlt: 'Kristina Spencer, Co-Founder and CEO of Essential EA.',
   shortBio:
-    'Decision architecture, customer discovery, operations and go-to-market.',
+    'Operator, strategist and executive leader working at the intersection of organizational execution, customer operations and AI-enabled decision intelligence. Kristina leads category strategy, customer discovery, commercialization and the operating methodology behind Essential EA + AI Storm OS.',
   proofPoints: ['26+ year military spouse', 'Author', 'Executive operator'],
   founderMarketFit:
     'Kristina spent decades operating inside environments where fragmented information, competing priorities, changing conditions, human judgment and execution all had to work together. The operating problem came first. The software came second.',
@@ -574,7 +574,7 @@ export const teamProfiles = [
     name: 'Monica Vasquez',
     title: 'Co-Founder & CTO',
     roleNote:
-      'Product architecture, AI systems, integrations and implementation. Monica turns operational problems into intelligent systems, integration architecture and executable product infrastructure.',
+      'Technologist, operator and product architect who translates complex organizational problems into working systems. Monica leads product architecture, AI systems, engineering and implementation for Essential EA + AI Storm OS.',
     proofPoints: ['Systems architect', 'Real-estate operator', 'Relentless problem solver'],
     headshot: '/founders/monica-vasquez.jpg',
     headshotAlt: 'Monica Vasquez, Co-Founder and CTO of Essential EA.',
