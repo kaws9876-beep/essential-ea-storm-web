@@ -1,6 +1,6 @@
-# Essential EA + AI Storm OS Public Website
+# EA STORM Public Website
 
-THIS REPOSITORY IS THE PUBLIC ESSENTIAL EA + AI STORM OS MARKETING WEBSITE.
+THIS REPOSITORY IS THE PUBLIC EA STORM MARKETING WEBSITE.
 
 IT IS SEPARATE FROM TSG AND ALL ESSENTIAL EA PRODUCT APPLICATION REPOSITORIES.
 
@@ -8,14 +8,23 @@ DO NOT IMPORT FROM OR MODIFY THOSE REPOSITORIES.
 
 ## Purpose
 
-This project is the public company and product website for Essential EA and AI
-Storm OS. It establishes the brand system, signature product experience, proof
+This project is the public EA STORM website. It establishes the brand system, signature product experience, proof
 architecture, company narrative, government maturity boundary, investor
 conversion path, analytics abstraction, route structure, accessibility baseline,
 and production-ready posture.
 
-Essential EA is the company. AI Storm OS is the platform. Crystal Ball Triage is
-the judgment layer inside the AI Storm OS architecture.
+EA STORM is the master external brand: **Keep What Matters Moving.**
+Crystal Ball determines. Authority governs. Storm executes. Verification proves.
+Memory learns. Existing legal-entity references and historical customer quotations
+are preserved; a brand change does not establish a new legal entity.
+
+Current messaging and visual governance:
+- [Canonical messaging](docs/ea-storm-canonical-messaging-v1.md)
+- [Master brand system](docs/ea-storm-master-brand-system-v1.md)
+- [Step 3 implementation and review notes](docs/ea-storm-step3-review.md)
+
+The phase notes below are historical implementation records, not overrides of
+the locked EA STORM messaging and brand system.
 
 ## Stack
 
@@ -24,7 +33,7 @@ the judgment layer inside the AI Storm OS architecture.
 - TypeScript with strict mode
 - Tailwind CSS
 - shadcn component foundation
-- Vercel-ready metadata and production build assumptions
+- Cloudflare Worker runtime with generated Vinext build configuration
 
 ## Commands
 

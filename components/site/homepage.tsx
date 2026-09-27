@@ -1,342 +1,577 @@
 import Image from 'next/image';
+import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
-import { ProductFrame } from '@/components/site/product-frame';
-import {
-  audienceSegments,
-  contactConfig,
-  fourQuestions,
-  storyImages,
-} from '@/components/site/content';
-import {
-  FourQuestionsSection,
-  StormOriginSection,
-} from '@/components/site/phase-two-sections';
-import {
-  CaseStudySection,
-  CommercialSection,
-  ProductProofSection,
-  ProofSection,
-  TestimonialArchitecture,
-} from '@/components/site/phase-three-sections';
-import {
-  FinalCategoryClose,
-  FounderSection,
-  GovernmentSection,
-  InvestorSection,
-  LaunchEvidenceChecklistSection,
-} from '@/components/site/phase-four-sections';
-import {
-  ButtonLink,
-  Container,
-  EditorialHeadline,
-  Eyebrow,
-  Section,
-  StatusChip,
-} from '@/components/site/primitives';
 import { AnalyticsListener } from '@/components/site/analytics-listener';
-import { cn } from '@/lib/utils';
+import {
+  caseStudyMetrics,
+  companyTraction,
+  contactConfig,
+  founderProfile,
+  operatingEnvironment,
+  schraderCaseStudy,
+  storyImages,
+  teamProfiles,
+  testimonials,
+} from '@/components/site/content';
 
-export function HomePage({ campaign }: { campaign?: 'penfed' }) {
+function Band({
+  id,
+  label,
+  children,
+  className = '',
+}: {
+  id?: string;
+  label?: string;
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <>
-      <AnalyticsListener campaign={campaign} />
-      <Header />
-      <main>
-        <Section className="storm-opening-stage overflow-hidden pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-8 lg:pb-14">
-          <CinematicEntrance />
-          <Container>
-            <div className="grid gap-10 lg:grid-cols-[34rem_1fr] lg:items-center xl:gap-14">
-              <div className="relative z-10 max-w-[34rem]">
-                <Eyebrow className="text-[var(--storm-gold)]">
-                  Decision & Execution Intelligence
-                </Eyebrow>
-                <EditorialHeadline
-                  as="h1"
-                  className="mt-5 text-[clamp(2.65rem,3.6vw,4.35rem)] leading-[0.98]"
-                >
-                  Know what matters.
-                  <br />
-                  Know what
-                  <br className="sm:hidden" /> happens next.
-                </EditorialHeadline>
-                <p className="mt-7 max-w-xl text-lg leading-8 text-[color-mix(in_srgb,var(--storm-cream)_76%,transparent)]">
-                  Crystal Ball Triage reasons across fragmented organizational
-                  information to determine what deserves attention, why it
-                  matters, who owns it, and what should happen next.
-                </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <ButtonLink
-                    href="#cinematic-sequence"
-                    event="hero_demo_click"
-                    className="w-full sm:w-auto"
-                  >
-                    See Storm in Action
-                  </ButtonLink>
-                  <ButtonLink
-                    href={contactConfig.demoHref}
-                    variant="secondary"
-                    event="platform_click"
-                    className="w-full sm:w-auto"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Request Demo
-                  </ButtonLink>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="hero-orbit absolute inset-0 -m-12 rounded-full opacity-70" />
-                <figure className="relative overflow-hidden border border-[color-mix(in_srgb,var(--storm-gold)_38%,transparent)] bg-[var(--storm-black)] shadow-[0_40px_120px_rgb(0_0_0/0.45)]">
-                  <Image
-                    alt={storyImages.crystalBallIngest.alt}
-                    className="aspect-[16/10] h-full w-full object-cover"
-                    height={720}
-                    priority
-                    src={storyImages.crystalBallIngest.src}
-                    unoptimized
-                    width={1200}
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--storm-black)] via-[rgb(10_10_10/0.72)] to-transparent p-5 sm:p-7">
-                    <p className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[var(--storm-gold)]">
-                      Fragmented signals enter the operating environment
-                    </p>
-                    <p className="mt-3 max-w-[17rem] font-serif text-[1.85rem] leading-tight text-[var(--storm-cream)] sm:max-w-lg sm:text-[clamp(2rem,5vw,2.75rem)]">
-                      Crystal Ball determines what deserves attention.
-                    </p>
-                  </div>
-                </figure>
-                <div className="mt-4 grid grid-cols-2 gap-px bg-[color-mix(in_srgb,var(--storm-cream)_14%,transparent)] font-sans text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-[color-mix(in_srgb,var(--storm-cream)_66%,transparent)] sm:grid-cols-4">
-                  {['Noise', 'Signal', 'Owner', 'Verified'].map((item) => (
-                    <p className="bg-[var(--storm-black)] px-3 py-3" key={item}>
-                      {item}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 border-y border-[color-mix(in_srgb,var(--storm-cream)_14%,transparent)] py-5">
-              <div className="grid gap-4 font-sans text-[0.64rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_55%,transparent)] sm:grid-cols-2 lg:grid-cols-4">
-                {audienceSegments.map((segment) => (
-                  <p key={segment}>{segment}</p>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </Section>
-
-        <CinematicSignalStory />
-        <CondensedProblemSection />
-        <FourQuestionsSection />
-        <ProductBehaviorSection />
-        <StormOriginSection />
-        <ProductProofSection />
-        <ProofSection />
-        <TestimonialArchitecture />
-        <CaseStudySection />
-        <CommercialSection />
-        <GovernmentSection />
-        <FounderSection />
-        <InvestorSection />
-        <FinalCategoryClose />
-        <LaunchEvidenceChecklistSection />
-      </main>
-      <Footer />
-    </>
+    <section id={id} className={`ea-band ${className}`}>
+      <div className="ea-container">
+        {label && <p className="ea-label">{label}</p>}
+        {children}
+      </div>
+    </section>
   );
 }
 
-function CinematicEntrance() {
-  const fragments = [
-    'Signal',
-    'Context',
-    'Triage',
-    'Decision',
-    'Authority',
-    'Action',
-  ];
-
+function Action({
+  href,
+  children,
+  secondary = false,
+  event,
+}: {
+  href: string;
+  children: ReactNode;
+  secondary?: boolean;
+  event?: string;
+}) {
+  const external = href.startsWith('https://');
   return (
-    <div aria-hidden="true" className="storm-opening">
-      <div className="storm-opening__field">
-        <div className="storm-opening__noise storm-opening__noise--a" />
-        <div className="storm-opening__noise storm-opening__noise--b" />
-        <div className="storm-opening__crystal" />
-        <div className="storm-opening__signal" />
-        <div className="storm-opening__threshold" />
-        <div className="storm-opening__fragments">
-          {fragments.map((fragment) => (
-            <span key={fragment}>{fragment}</span>
-          ))}
-        </div>
-        <div className="storm-opening__statement">
-          <span>Know what matters.</span>
-          <span>Know what happens next.</span>
-        </div>
-      </div>
+    <a
+      className={`ea-action ${secondary ? 'ea-action--quiet' : ''}`}
+      href={href}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      data-analytics-event={event}
+    >
+      {children}
+      <ArrowUpRight size={18} aria-hidden="true" />
+    </a>
+  );
+}
+
+const questions = ['What matters?', 'Who owns it?', 'What happens next?'];
+export function HomePage({ campaign }: { campaign?: 'penfed' }) {
+  return (
+    <div className="ea-site">
+      <AnalyticsListener campaign={campaign} />
+      <Header />
+      <main id="main-content">
+        <section className="ea-hero" aria-labelledby="hero-title">
+          <Image
+            className="ea-hero__image"
+            src="/brand/ea-storm-architecture.jpg"
+            alt=""
+            width={1536}
+            height={1024}
+            priority
+            unoptimized
+          />
+          <div className="ea-entrance" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+            <b />
+          </div>
+          <div className="ea-container ea-hero__content">
+            <p className="ea-label">EA STORM</p>
+            <h1 id="hero-title">
+              Keep What
+              <br className="ea-mobile-break" /> Matters Moving.
+            </h1>
+            <div className="ea-hero__bottom">
+              <p className="ea-hero__promise">
+                Identify what needs attention.
+                <br />
+                Get it to the right owner.
+                <br />
+                Keep it moving through the outcome.
+              </p>
+              <div className="ea-actions">
+                <Action href="#how-it-works" event="hero_demo_click">
+                  See How It Works
+                </Action>
+                <Action
+                  href={contactConfig.demoHref}
+                  secondary
+                  event="platform_click"
+                >
+                  Request Demo
+                </Action>
+              </div>
+            </div>
+            <a
+              className="ea-hero__next"
+              href="#how-it-works"
+              aria-label="Explore how EA STORM works"
+            >
+              <ArrowDown size={22} aria-hidden="true" />
+            </a>
+          </div>
+        </section>
+        <Band id="how-it-works" className="ea-questions">
+          <div className="ea-question-row">
+            {questions.map((q, i) => (
+              <div key={q}>
+                <span className="ea-index">0{i + 1}</span>
+                <h2>{q}</h2>
+              </div>
+            ))}
+          </div>
+          <p className="ea-lead ea-question-support">
+            Your organization already has the information.
+            <br />
+            EA STORM helps turn what it knows into what happens next.
+          </p>
+        </Band>
+        <Band
+          id="problem"
+          label="The gap between knowing and doing"
+          className="ea-white"
+        >
+          <div className="ea-editorial">
+            <h2>Important things get lost between knowing and doing.</h2>
+            <div className="ea-prose">
+              <p className="ea-pullquote">“I thought someone owned that.”</p>
+              <p>
+                The email existed. The CRM had information. The meeting surfaced
+                context. The dashboard showed data.
+              </p>
+              <p>Yet the right action may still fail to happen.</p>
+              <p className="ea-emphasis">
+                When important things keep getting missed, leaders become the
+                fallback.
+              </p>
+              <p>
+                The same problems surface again. Teams fix what is urgent
+                instead of what is causing it. Leadership gets pulled back into
+                the business instead of having the space to lead it forward.
+              </p>
+            </div>
+          </div>
+        </Band>
+        <Band id="root-cause" label="Recurring issues">
+          <div className="ea-editorial">
+            <h2>Stop treating the symptom.</h2>
+            <div className="ea-prose">
+              <p className="ea-pullquote">
+                The fire gets put out. The reason it started is still there.
+              </p>
+              <p>
+                EA STORM brings related signals and organizational context
+                together so teams can see what may be driving a recurring
+                issue—not just what is showing up on the surface.
+              </p>
+            </div>
+          </div>
+        </Band>
+        <Band id="existing-stack" label="Across the systems you already use">
+          <div className="ea-editorial">
+            <h2>
+              Most systems help you record work, report on work, or execute
+              work.
+            </h2>
+            <div className="ea-prose">
+              <p className="ea-emphasis">
+                EA STORM makes sure the right work moves in the first place.
+              </p>
+              <p className="ea-system-promise">
+                We don&apos;t replace the systems you use.
+                <br />
+                We work across them.
+              </p>
+              <p>
+                EA STORM brings together signals already living across your
+                systems, teams and workflows to show what needs attention, what
+                may be driving it, who should own it, and what should happen
+                next.
+              </p>
+            </div>
+          </div>
+          <p className="ea-system-line">
+            CRM <span>/</span> Email <span>/</span> Meetings <span>/</span>{' '}
+            Documents <span>/</span> Finance <span>/</span> Operations
+          </p>
+        </Band>
+        <Band
+          id="storm-origin"
+          label="The intelligence behind the name"
+          className="ea-dark ea-origin"
+        >
+          <h2>
+            Some things can&apos;t be dropped.
+            <br />
+            Some signals can&apos;t be missed.
+          </h2>
+          <figure className="ea-origin-visual">
+            <div>
+              <Image
+                src={storyImages.crystalBallDecision.src}
+                alt={storyImages.crystalBallDecision.alt}
+                width={1536}
+                height={1024}
+                unoptimized
+                loading="lazy"
+              />
+              <span>Crystal Ball / Questions protected</span>
+            </div>
+            <i aria-hidden="true" />
+            <div>
+              <Image
+                src={storyImages.stormSignalRouting.src}
+                alt={storyImages.stormSignalRouting.alt}
+                width={1536}
+                height={1024}
+                unoptimized
+                loading="lazy"
+              />
+              <span>Storm / Response in motion</span>
+            </div>
+            <figcaption>
+              Conceptual visualization of signal, recognition, movement and
+              response
+            </figcaption>
+          </figure>
+          <div className="ea-origin__layout">
+            <div className="ea-prose">
+              <p className="ea-label">Crystal Ball</p>
+              <p>
+                Early in Kristina Spencer’s career, in one of her first meetings
+                with a commander, the commander had two lucite boxes. One held
+                a crystal ball. The other held a tennis/bouncy ball.
+              </p>
+              <p>
+                The Crystal Ball represented the questions that could not be
+                dropped: Why does this matter? Who should own it? Should it be
+                automated? What oversight does it need? How will it be held
+                accountable? What was the outcome? What did we learn? What
+                problem did we solve?
+              </p>
+              <p>
+                Execution was the bouncy ball. Work can move, be handed off,
+                occasionally drop, and be recovered. The bouncy ball bounces.
+                The Crystal Ball shatters.
+              </p>
+            </div>
+            <div className="ea-prose">
+              <p className="ea-label">Storm</p>
+              <p>
+                Years later, after a staff meeting, Kristina was walking toward
+                the back of the office. She saw her co-founder Monica Vasquez’s
+                service animal, Storm, standing at attention near the office
+                door and appearing to need help releasing her leash.
+              </p>
+              <p>
+                Kristina released the leash. Storm immediately moved toward the
+                conference room. Monica was experiencing a seizure. Kristina
+                had not recognized what was happening. Storm had recognized the
+                signal and moved to assist Monica.
+              </p>
+              <p className="ea-note">
+                Monica Vasquez has explicitly approved public use of this
+                story.
+              </p>
+            </div>
+          </div>
+          <p className="ea-origin__closing">
+            Crystal Ball taught Kristina to protect the questions that matter.
+            Storm demonstrated the power of recognizing a consequential signal
+            and moving the appropriate response. Together, those lessons helped
+            shape the operating idea behind EA STORM.
+          </p>
+          <span id="signature-sequence" className="ea-anchor" />
+          <ol className="ea-role-sequence">
+            {[
+              'Crystal Ball determines.',
+              'Authority governs.',
+              'Storm executes.',
+              'Verification proves.',
+              'Memory learns.',
+            ].map((role, i) => (
+              <li key={role}>
+                <span className="ea-index">0{i + 1}</span>
+                <p>{role}</p>
+                {i < 4 && <ArrowRight size={18} aria-hidden="true" />}
+              </li>
+            ))}
+          </ol>
+        </Band>
+        <AskStormSection />
+        <ProofSection />
+        <Band id="why-now" label="Why now" className="ea-dark ea-thesis">
+          <div className="ea-editorial">
+            <h2>Your systems know more than your organization acts on.</h2>
+            <p className="ea-lead">
+              More data, more software and more AI create more possible actions.
+              EA STORM helps determine which ones actually need to move.
+            </p>
+          </div>
+        </Band>
+        <FounderSection />
+        <InvestorSection campaign={campaign} />
+        <Band id="contact" label="EA STORM" className="ea-close">
+          <h2>Keep What Matters Moving.</h2>
+          <div className="ea-close__bottom">
+            <p className="ea-lead">
+              Know what matters.
+              <br />
+              Know who owns it.
+              <br />
+              Keep it moving.
+            </p>
+            <Action href={contactConfig.demoHref} event="platform_click">
+              Request Demo
+            </Action>
+          </div>
+        </Band>
+      </main>
+      <Footer />
     </div>
   );
 }
 
-const cinematicBeats = [
-  {
-    kicker: 'Noise',
-    title: 'Organizations are surrounded by signals.',
-    body: 'CRM, email, meetings, documents, finance, operations, customers and market change all speak at once.',
-    image: storyImages.crystalBallIngest,
-  },
-  {
-    kicker: 'Triage',
-    title: 'Crystal Ball determines what deserves attention.',
-    body: 'The signal is evaluated for context, consequence, timing, ownership and required judgment.',
-    image: storyImages.crystalBallDecision,
-  },
-  {
-    kicker: 'Action',
-    title: 'Then, Storm carries judgment into action.',
-    body: 'The Decision Object moves through ownership, authority and execution.',
-    image: storyImages.stormSignalRouting,
-  },
-  {
-    kicker: 'Verified',
-    title: 'Execution becomes memory.',
-    body: 'Storm checks what happened, what worked, and what the organization should remember.',
-    image: storyImages.verificationOutcome,
-  },
-] as const;
-
-function CinematicSignalStory() {
+function AskStormSection() {
   return (
-    <Section id="cinematic-sequence" className="py-12 sm:py-16 lg:py-[4.5rem]">
-      <Container>
-        <div className="grid gap-7 lg:grid-cols-[0.4fr_0.6fr] lg:items-end">
-          <div>
-            <Eyebrow className="text-[var(--storm-gold)]">
-              First, Crystal Ball Determines
-            </Eyebrow>
-            <EditorialHeadline className="mt-5 max-w-3xl text-[clamp(3rem,5vw,5.4rem)]">
-              What deserves attention?
-            </EditorialHeadline>
-          </div>
-          <p className="max-w-2xl text-base leading-7 text-[color-mix(in_srgb,var(--storm-cream)_72%,transparent)] sm:text-lg sm:leading-8">
-            Systems record. Dashboards report. Models reason. Agents execute.
-            Crystal Ball determines what deserves attention. Storm carries
-            governed judgment into action.
+    <Band
+      id="product-proof"
+      label="The product / Ask STORM"
+      className="ea-product ea-ask"
+    >
+      <div className="ea-editorial">
+        <h2>Ask STORM.</h2>
+        <div className="ea-prose">
+          <p className="ea-emphasis">Ask what&apos;s getting in the way.</p>
+          <p>
+            Ask a question. EA STORM brings together the relevant
+            organizational context, shows what requires attention, surfaces
+            what may be driving the issue, and proposes what should happen
+            next.
           </p>
         </div>
-
-        <div className="mt-8 grid gap-5 sm:mt-10">
-          {cinematicBeats.map((beat, index) => (
-            <article
-              className="cinematic-step grid overflow-hidden border border-[color-mix(in_srgb,var(--storm-cream)_13%,transparent)] bg-[color-mix(in_srgb,var(--storm-cream)_3%,transparent)] lg:grid-cols-[0.48fr_0.52fr]"
-              key={beat.kicker}
-              style={{ animationDelay: `${index * 120}ms` }}
-            >
-              <div className={cn('relative min-h-72', index % 2 === 1 && 'lg:order-2')}>
-                <Image
-                  alt={beat.image.alt}
-                  className="h-full w-full object-cover"
-                  height={675}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  src={beat.image.src}
-                  unoptimized
-                  width={1200}
-                />
-              </div>
-              <div className="flex min-h-72 flex-col justify-between p-6 sm:p-8 lg:p-10">
-                <div className="flex items-center justify-between gap-4">
-                  <StatusChip intent={index === 3 ? 'attention' : 'neutral'}>
-                    {beat.kicker}
-                  </StatusChip>
-                  <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_42%,transparent)]">
-                    {String(index + 1).padStart(2, '0')} / 04
-                  </p>
-                </div>
-                <div>
-                  <h2 className="max-w-xl font-serif text-[clamp(2.35rem,4.5vw,5rem)] leading-[0.96]">
-                    {beat.title}
-                  </h2>
-                  <p className="mt-5 max-w-xl text-base leading-7 text-[color-mix(in_srgb,var(--storm-cream)_68%,transparent)]">
-                    {beat.body}
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </Container>
-    </Section>
-  );
-}
-
-function CondensedProblemSection() {
-  const sources = ['CRM', 'Email', 'Meetings', 'Documents', 'Finance', 'Operations', 'Customers', 'Market'];
-
-  return (
-    <Section tone="cream" className="py-16 sm:py-20">
-      <Container>
-        <div className="grid gap-10 lg:grid-cols-[0.56fr_0.44fr] lg:items-center">
-          <div>
-            <Eyebrow className="text-[color-mix(in_srgb,var(--storm-black)_54%,transparent)]">
-              The Customer Problem
-            </Eyebrow>
-            <EditorialHeadline className="mt-7 text-[clamp(2.9rem,5.8vw,6.2rem)]">
-              Your organization isn&apos;t short on information.
-              <br />
-              It&apos;s short on knowing what matters.
-            </EditorialHeadline>
+      </div>
+      <p className="ea-note">
+        Synthetic product demonstration. No private customer data is displayed.
+      </p>
+      <div className="ea-ask__experience">
+        <div className="ea-ask__conversation" aria-label="Ask STORM demonstration">
+          <div className="ea-message ea-message--user">
+            <p className="ea-label">You</p>
+            <p>What&apos;s getting in our way right now?</p>
           </div>
-          <div className="grid gap-px bg-[color-mix(in_srgb,var(--storm-black)_14%,transparent)] sm:grid-cols-2">
-            {sources.map((source, index) => (
-              <p
-                className={cn(
-                  'bg-[var(--storm-cream)] p-5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color-mix(in_srgb,var(--storm-black)_58%,transparent)]',
-                  index === 6 && 'text-[color-mix(in_srgb,var(--storm-gold)_76%,var(--storm-black))]',
-                )}
-                key={source}
-              >
-                {source}
-              </p>
+          <div className="ea-message">
+            <p className="ea-label">EA STORM</p>
+            <p>Three issues need attention.</p>
+            <ol className="ea-issue-list">
+              <li>Customer opportunity sitting untouched</li>
+              <li>Duplicative technology and system spend</li>
+              <li>Workflow and handoff breakdown</li>
+            </ol>
+          </div>
+          <div className="ea-message ea-message--user">
+            <p className="ea-label">You</p>
+            <p>What should we do first?</p>
+          </div>
+          <div className="ea-message">
+            <p className="ea-label">EA STORM</p>
+            <p>
+              Review the untouched customer opportunity first. Confirm the
+              owner, deadline and authority before action.
+            </p>
+          </div>
+          <div className="ea-ask__context">
+            {[
+              ['Why this surfaced', 'No recent activity against an open opportunity'],
+              ['Evidence', 'CRM activity · customer behavior · workflow history'],
+              ['Owner', 'Confirm accountable relationship owner'],
+              ['Next action', 'Review context and approve the proposed follow-up'],
+              ['Authority', 'Human approval required before execution'],
+              ['Verification', 'Track response and resulting status'],
+              ['Outcome', 'Return the result to organizational memory'],
+            ].map(([label, value]) => (
+              <div key={label}>
+                <p className="ea-label">{label}</p>
+                <p>{value}</p>
+              </div>
             ))}
           </div>
         </div>
-      </Container>
-    </Section>
+        <figure className="ea-ask__command">
+          <figcaption>
+            <p className="ea-label">Integrated operating context</p>
+            <h3>Operator Command Center</h3>
+          </figcaption>
+          <a
+            href="/product/command-center.webp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Inspect the Operator Command Center screenshot"
+          >
+              <Image
+                src="/product/command-center.webp"
+                alt="Operator Command Center interface showing prioritized operational signals and execution work."
+                width={1536}
+                height={1024}
+                unoptimized
+                loading="lazy"
+              />
+          </a>
+          <p className="ea-note">
+            The conversation is an interface into governed organizational
+            context—not a chatbot beside a dashboard.
+          </p>
+        </figure>
+      </div>
+    </Band>
   );
 }
 
-function ProductBehaviorSection() {
+function ProofSection() {
   return (
-    <Section id="signature-sequence" className="py-16 sm:py-24">
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.35fr_0.65fr]">
-          <div>
-            <Eyebrow className="text-[var(--storm-gold)]">
-              See the Decision Object in Motion
-            </Eyebrow>
-            <p className="mt-7 font-serif text-[clamp(2.6rem,5vw,5.6rem)] leading-[0.98]">
-              The product behavior makes sense after the judgment problem is
-              clear.
-            </p>
-            <div className="mt-8 grid gap-2 font-sans text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_62%,transparent)]">
-              {fourQuestions.map((item) => (
-                <p className="border-t border-current/16 pt-3" key={item.question}>
-                  {item.question}
-                </p>
-              ))}
+    <Band id="proof" label="Proof / Results" className="ea-white">
+      <div className="ea-editorial">
+        <h2>
+          Built in real operations.
+          <br />
+          Proven through real use.
+        </h2>
+        <p className="ea-lead">
+          {schraderCaseStudy.headline}
+          <br />
+          {schraderCaseStudy.subhead}
+        </p>
+      </div>
+      <div id="case-study" className="ea-case-context">
+        <span>{schraderCaseStudy.client}</span>
+        <span>{schraderCaseStudy.industry}</span>
+        <span>{schraderCaseStudy.engagement}</span>
+      </div>
+      <div className="ea-evidence">
+        {caseStudyMetrics
+          .filter((m) => m.verified)
+          .map((m) => (
+            <div key={m.label}>
+              <p className="ea-number">{m.value}</p>
+              <div>
+                <h3>{m.label}</h3>
+                <p className="ea-note">{m.sourceNote}</p>
+              </div>
             </div>
-          </div>
+          ))}
+      </div>
+      <p className="ea-note">{schraderCaseStudy.attributionBoundary}</p>
+      <details className="ea-details">
+        <summary>Customer operating environment</summary>
+        <div className="ea-operating">
+          {operatingEnvironment
+            .filter((m) => m.verified)
+            .map((m) => (
+              <div key={m.label}>
+                <strong>{m.value}</strong>
+                <p>{m.label}</p>
+                <p className="ea-note">{m.sourceNote}</p>
+              </div>
+            ))}
+        </div>
+        <p className="ea-note">
+          Customer operating scale and outcomes are not EA STORM company revenue
+          or company traction.
+        </p>
+      </details>
+      <blockquote className="ea-testimonial">
+        <p>“{testimonials[0].quote}”</p>
+        <footer>
+          {testimonials[0].attribution} / {testimonials[0].organization}
+        </footer>
+      </blockquote>
+    </Band>
+  );
+}
+
+function FounderSection() {
+  const founders = [
+    { ...founderProfile, bio: founderProfile.shortBio },
+    { ...teamProfiles[0], bio: teamProfiles[0].roleNote },
+  ];
+  return (
+    <Band id="company" label="The founders">
+      <div className="ea-editorial">
+        <h2>
+          Operational understanding.
+          <br />
+          Technical execution.
+        </h2>
+        <p className="ea-lead">
+          The operating problem came first.
+          <br />
+          The software came second.
+        </p>
+      </div>
+      <div className="ea-founders">
+        {founders.map((f) => (
+          <article key={f.name}>
+            <Image
+              src={f.headshot}
+              alt={f.headshotAlt}
+              width={800}
+              height={1000}
+              unoptimized
+              loading="lazy"
+            />
+            <p className="ea-label">{f.title}</p>
+            <h3>{f.name}</h3>
+            <p>{f.bio}</p>
+          </article>
+        ))}
+      </div>
+    </Band>
+  );
+}
+
+function InvestorSection({ campaign }: { campaign?: 'penfed' }) {
+  return (
+    <Band id="investors" label="Investors" className="ea-white">
+      <div className="ea-editorial">
+        <h2>Investor Relations</h2>
+        <div>
+          <p className="ea-emphasis">
+            EA STORM is engaging select investors and strategic partners.
+          </p>
+          <Action href={contactConfig.investorHref} event="investor_click">
+            Request Investor Materials
+          </Action>
+        </div>
+      </div>
+      {campaign === 'penfed' && (
+        <div className="ea-traction">
+          <h3>Company traction</h3>
+          <p className="ea-note">
+            Founder-validated September 14, 2026. Point-in-time company
+            traction.
+          </p>
           <div>
-            <div className="mb-4 flex items-center justify-between gap-4 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_48%,transparent)]">
-              <p>Product Behavior</p>
-              <p className="hidden sm:block">Decision Object in Motion</p>
-            </div>
-            <ProductFrame />
+            {companyTraction.map((m) => (
+              <div key={m.label}>
+                <p className="ea-number">{m.value}</p>
+                <h4>{m.label}</h4>
+                <p className="ea-note">{m.sourceNote}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </Container>
-    </Section>
+      )}
+    </Band>
   );
 }

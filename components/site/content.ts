@@ -559,9 +559,9 @@ export const founderProfile = {
   name: 'Kristina Spencer',
   title: 'Co-Founder & CEO',
   headshot: '/founders/kristina-spencer.jpg',
-  headshotAlt: 'Kristina Spencer, Co-Founder and CEO of Essential EA.',
+  headshotAlt: 'Kristina Spencer, Co-Founder and CEO of EA STORM.',
   shortBio:
-    'Operator, strategist and executive leader working at the intersection of organizational execution, customer operations and AI-enabled decision intelligence. Kristina leads category strategy, customer discovery, commercialization and the operating methodology behind Essential EA + AI Storm OS.',
+    'Operator, strategist and executive leader working at the intersection of organizational execution, customer operations and AI-enabled decision intelligence. Kristina leads category strategy, customer discovery, commercialization and the operating methodology behind EA STORM.',
   proofPoints: ['26+ year military spouse', 'Author', 'Executive operator'],
   founderMarketFit:
     'Kristina spent decades operating inside environments where fragmented information, competing priorities, changing conditions, human judgment and execution all had to work together. The operating problem came first. The software came second.',
@@ -574,10 +574,10 @@ export const teamProfiles = [
     name: 'Monica Vasquez',
     title: 'Co-Founder & CTO',
     roleNote:
-      'Technologist, operator and product architect who translates complex organizational problems into working systems. Monica leads product architecture, AI systems, engineering and implementation for Essential EA + AI Storm OS.',
+      'Technologist, operator and product architect who translates complex organizational problems into working systems. Monica leads product architecture, AI systems, engineering and implementation for EA STORM.',
     proofPoints: ['Systems architect', 'Real-estate operator', 'Relentless problem solver'],
     headshot: '/founders/monica-vasquez.jpg',
-    headshotAlt: 'Monica Vasquez, Co-Founder and CTO of Essential EA.',
+    headshotAlt: 'Monica Vasquez, Co-Founder and CTO of EA STORM.',
     approved: true,
   },
 ] as const;

@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { HomePage } from '@/components/site/homepage';
 
 export const metadata: Metadata = {
-  title: 'AI Storm OS | Decision & Execution Intelligence',
+  title: 'EA STORM | Keep What Matters Moving.',
   description:
-    'AI Storm OS turns fragmented organizational signals into accountable execution by connecting context, decision rights, ownership, execution, verification and organizational learning across existing systems and AI.',
+    'EA STORM identifies what needs attention, gets it to the right owner, and keeps it moving through the outcome.',
 };
 
 export default function PenFedPage() {

@@ -1,56 +1,54 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { Container, Divider } from '@/components/site/primitives';
 
-export function Footer({ sectionHrefPrefix = '' }: { sectionHrefPrefix?: string }) {
+export function Footer({
+  sectionHrefPrefix = '',
+}: {
+  sectionHrefPrefix?: string;
+}) {
   return (
-    <footer className="bg-[var(--storm-black)] py-14 text-[var(--storm-cream)]">
-      <Container>
-        <Divider />
-        <div className="grid gap-10 pt-10 lg:grid-cols-[1.2fr_0.8fr]">
-          <div>
-            <p className="font-serif text-3xl leading-tight sm:text-4xl">
-              AI Storm OS
-              <br />
-              Decision & Execution Intelligence
-            </p>
-            <p className="mt-5 max-w-xl text-sm leading-7 text-[color-mix(in_srgb,var(--storm-cream)_62%,transparent)]">
-              Essential EA is building the layer between organizational
-              intelligence and accountable action. AI Storm OS Gov is a
-              development-stage architecture and is not represented as
-              government-authorized.
-            </p>
-            <p className="mt-8 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_44%,transparent)]">
-              Copyright {new Date().getFullYear()} Essential EA
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-6 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_62%,transparent)]">
-            <Link href={`${sectionHrefPrefix}#brain-execution`} className="hover:text-[var(--storm-cream)]">
-              Platform
-            </Link>
-            <Link href={`${sectionHrefPrefix}#commercial`} className="hover:text-[var(--storm-cream)]">
-              Commercial
-            </Link>
-            <Link href={`${sectionHrefPrefix}#government`} className="hover:text-[var(--storm-cream)]">
-              Government
-            </Link>
-            <Link href={`${sectionHrefPrefix}#proof`} className="hover:text-[var(--storm-cream)]">
-              Proof
-            </Link>
-            <Link href={`${sectionHrefPrefix}#company`} className="hover:text-[var(--storm-cream)]">
-              Company
-            </Link>
-            <Link href={`${sectionHrefPrefix}#investors`} className="hover:text-[var(--storm-cream)]">
-              Investors
-            </Link>
-            <Link href={`${sectionHrefPrefix}#contact`} className="hover:text-[var(--storm-cream)]">
-              Contact
-            </Link>
-            <Link href="/privacy" className="hover:text-[var(--storm-cream)]">
-              Privacy
-            </Link>
-          </div>
+    <footer className="ea-footer">
+      <div className="ea-container">
+        <div className="ea-footer__top">
+          <Link href="/" aria-label="EA STORM homepage">
+            <Image
+              src="/brand/ea-storm-gold.png"
+              alt="EA STORM — Keep What Matters Moving."
+              width={1536}
+              height={1024}
+              unoptimized
+              className="ea-footer__logo"
+            />
+          </Link>
+          <p>
+            EA STORM identifies what needs attention, gets it to the right
+            owner, and keeps it moving through the outcome.
+          </p>
+          <nav aria-label="Footer navigation">
+            {[
+              ['Platform', '#brain-execution'],
+              ['Commercial', '#commercial'],
+              ['Government', '#government'],
+              ['Proof', '#proof'],
+              ['Company', '#company'],
+              ['Investors', '#investors'],
+              ['Contact', '#contact'],
+            ].map(([label, href]) => (
+              <Link key={href} href={`${sectionHrefPrefix}${href}`}>
+                {label}
+              </Link>
+            ))}
+            <Link href="/privacy">Privacy</Link>
+          </nav>
         </div>
-      </Container>
+        <div className="ea-footer__legal">
+          <p>Copyright {new Date().getFullYear()} Essential EA</p>
+          <p>
+            Government architecture is development-stage and is not represented
+            as government-authorized.
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }

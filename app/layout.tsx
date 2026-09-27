@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { EB_Garamond, Inter } from 'next/font/google';
 import './globals.css';
+import './ea-storm.css';
 
 const inter = Inter({
   variable: '--font-storm-sans',
@@ -14,20 +15,20 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'AI Storm OS | Decision & Execution Intelligence',
+  title: 'EA STORM | Keep What Matters Moving.',
   description:
-    'AI Storm OS turns fragmented organizational signals into accountable execution by connecting context, decision rights, ownership, execution, verification and organizational learning across existing systems and AI.',
+    'EA STORM identifies what needs attention, gets it to the right owner, and keeps it moving through the outcome.',
   openGraph: {
-    title: 'AI Storm OS — Know What Matters. Know What Happens Next.',
+    title: 'EA STORM | Keep What Matters Moving.',
     description:
-      'AI Storm OS turns fragmented organizational signals into accountable execution by connecting context, decision rights, ownership, execution, verification and organizational learning across existing systems and AI.',
+      'EA STORM identifies what needs attention, gets it to the right owner, and keeps it moving through the outcome.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Storm OS — Know What Matters. Know What Happens Next.',
+    title: 'EA STORM | Keep What Matters Moving.',
     description:
-      'AI Storm OS turns fragmented organizational signals into accountable execution by connecting context, decision rights, ownership, execution, verification and organizational learning across existing systems and AI.',
+      'EA STORM identifies what needs attention, gets it to the right owner, and keeps it moving through the outcome.',
   },
 };
 
@@ -38,9 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${ebGaramond.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${ebGaramond.variable} antialiased`}>
         {children}
       </body>
     </html>

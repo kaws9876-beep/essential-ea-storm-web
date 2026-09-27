@@ -1,59 +1,94 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { Container, ButtonLink } from '@/components/site/primitives';
-import { contactConfig, navItems } from '@/components/site/content';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { contactConfig } from '@/components/site/content';
 
-export function Header({ sectionHrefPrefix = '' }: { sectionHrefPrefix?: string }) {
+const links = [
+  { label: 'How it works', href: '#how-it-works' },
+  { label: 'Proof', href: '#proof' },
+  { label: 'Company', href: '#company' },
+  { label: 'Investors', href: '#investors' },
+];
+
+export function Header({
+  sectionHrefPrefix = '',
+}: {
+  sectionHrefPrefix?: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+    }
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, [open]);
   return (
-    <header className="sticky top-0 z-50 bg-[color-mix(in_srgb,var(--storm-black)_94%,transparent)] text-[var(--storm-cream)] backdrop-blur-md">
-      <Container className="flex min-h-[4.75rem] items-center justify-between gap-6 border-b border-[color-mix(in_srgb,var(--storm-cream)_14%,transparent)]">
-        <Link
-          href="/"
-          className="group flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--storm-gold)]"
-          aria-label="Essential EA homepage"
-        >
+    <header className="ea-header">
+      <div className="ea-container ea-header__row">
+        <Link href="/" aria-label="EA STORM homepage" className="ea-logo">
           <Image
-            alt="Essential EA + AI Storm OS"
-            className="h-10 w-auto object-contain transition duration-300 group-hover:brightness-110 sm:h-11"
-            height={72}
-            priority
-            src="/brand/essential-ea-ai-storm-os-lockup.png"
+            alt="EA STORM — Keep What Matters Moving."
+            src="/brand/ea-storm-gold.png"
+            width={1536}
+            height={1024}
             unoptimized
-            width={190}
+            priority
           />
         </Link>
-        <nav aria-label="Primary navigation" className="hidden items-center gap-8 lg:flex">
-          {navItems.map((item) => (
-            <Link
-              className="border-b border-transparent pb-1 font-sans text-[0.74rem] font-semibold uppercase tracking-[0.15em] text-[color-mix(in_srgb,var(--storm-cream)_74%,transparent)] transition hover:border-[var(--storm-gold)] hover:text-[var(--storm-cream)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--storm-gold)]"
-              href={`${sectionHrefPrefix}${item.href}`}
-              key={item.href}
-            >
-              {item.label}
+        <nav className="ea-desktop-nav" aria-label="Primary navigation">
+          {links.map((l) => (
+            <Link key={l.href} href={`${sectionHrefPrefix}${l.href}`}>
+              {l.label}
             </Link>
           ))}
         </nav>
-        <ButtonLink
+        <a
           href={contactConfig.demoHref}
-          event="platform_click"
-          className="hidden sm:inline-flex"
-          rel="noopener noreferrer"
+          className="ea-action ea-header__demo"
           target="_blank"
+          rel="noopener noreferrer"
+          data-analytics-event="platform_click"
         >
           Request Demo
-        </ButtonLink>
-      </Container>
-      <Container className="flex min-h-11 items-center gap-5 overflow-x-auto border-b border-[color-mix(in_srgb,var(--storm-cream)_10%,transparent)] font-sans text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[color-mix(in_srgb,var(--storm-cream)_64%,transparent)] lg:hidden">
-        {navItems.map((item) => (
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
+        <button
+          ref={toggle}
+          className="ea-menu-button"
+          aria-label={open ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+        </button>
+      </div>
+      <nav
+        id="mobile-navigation"
+        className="ea-mobile-nav"
+        aria-label="Mobile navigation"
+        hidden={!open}
+      >
+        {links.map((l) => (
           <Link
-            className="shrink-0 border-b border-transparent py-3 transition hover:border-[var(--storm-gold)] hover:text-[var(--storm-cream)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--storm-gold)]"
-            href={`${sectionHrefPrefix}${item.href}`}
-            key={item.href}
+            key={l.href}
+            href={`${sectionHrefPrefix}${l.href}`}
+            onClick={() => setOpen(false)}
           >
-            {item.label}
+            {l.label}
+            <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         ))}
-      </Container>
+      </nav>
     </header>
   );
 }
