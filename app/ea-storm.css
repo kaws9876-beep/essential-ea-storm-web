@@ -151,6 +151,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
+  isolation: isolate;
   border-bottom: 1px solid #dedbd5;
 }
 .ea-header__row {
@@ -183,20 +184,31 @@
 .ea-desktop-nav a:hover {
   border-bottom-color: #c9a24a;
 }
-.ea-menu-button {
+.ea-mobile-menu {
+  display: none;
+  position: relative;
+}
+.ea-mobile-menu summary {
   display: none;
   width: 44px;
   height: 44px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  list-style: none;
+}
+.ea-mobile-menu summary::-webkit-details-marker {
+  display: none;
 }
 .ea-mobile-nav {
-  padding: 0 24px 24px;
-  border-top: 1px solid #dedbd5;
-}
-.ea-mobile-nav[hidden] {
-  display: none;
+  position: absolute;
+  top: calc(100% + 20px);
+  right: 0;
+  width: min(320px, calc(100vw - 40px));
+  padding: 12px 24px 24px;
+  background: #f5f1ea;
+  border: 1px solid #dedbd5;
+  box-shadow: 0 20px 40px rgb(10 10 10 / 12%);
 }
 .ea-mobile-nav a {
   display: flex;
@@ -223,6 +235,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  animation: ea-hero-drift 8s ease-out both;
 }
 .ea-hero .ea-label {
   font-size: 18px;
@@ -324,6 +337,14 @@
     opacity: 0;
   }
 }
+@keyframes ea-hero-drift {
+  from {
+    transform: scale(1.025) translateX(8px);
+  }
+  to {
+    transform: scale(1) translateX(0);
+  }
+}
 .ea-questions {
   padding-top: 32px;
   border-top: 1px solid #d7d3cb;
@@ -372,6 +393,34 @@
 }
 .ea-system-line span {
   color: #777;
+}
+.ea-behaviors,
+.ea-environments {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 56px;
+}
+.ea-behaviors > div,
+.ea-environments article {
+  min-width: 0;
+  padding-top: 20px;
+  border-top: 1px solid #c9a24a;
+}
+.ea-behaviors h3,
+.ea-environments h3 {
+  margin: 18px 0 14px;
+  font-size: 30px;
+}
+.ea-systems-summary {
+  align-items: start;
+  margin-top: 72px;
+  padding-top: 48px;
+  border-top: 1px solid #c6c2bb;
+}
+.ea-application-close {
+  color: #0a0a0a;
+  border-top-color: #c7c0b7;
 }
 .ea-site figcaption {
   font-size: 14px;
@@ -511,6 +560,16 @@
 .ea-message {
   padding: 24px;
   border-bottom: 1px solid #dedbd5;
+  animation: ea-message-resolve 520ms ease-out both;
+}
+.ea-message:nth-child(2) {
+  animation-delay: 180ms;
+}
+.ea-message:nth-child(3) {
+  animation-delay: 360ms;
+}
+.ea-message:nth-child(4) {
+  animation-delay: 540ms;
 }
 .ea-message--user {
   background: #ece7de;
@@ -543,6 +602,16 @@
   from {
     opacity: 0;
     transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes ea-message-resolve {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -651,6 +720,23 @@
   margin-top: 24px;
   font-size: 14px;
 }
+.ea-external-validation {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: baseline;
+  margin-top: clamp(48px, 7vw, 96px);
+  padding-top: 24px;
+  border-top: 1px solid var(--ea-line);
+}
+.ea-external-validation > p:last-child {
+  max-width: 768px;
+  margin: 0;
+  font:
+    clamp(22px, 2.3vw, 32px) / 1.25 var(--font-storm-serif),
+    Georgia,
+    serif;
+}
 .ea-applications {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -682,6 +768,9 @@
 }
 #investors .ea-action {
   margin-top: 24px;
+}
+.ea-engagement-actions {
+  margin-top: 28px;
 }
 .ea-traction {
   margin-top: 48px;
@@ -742,7 +831,7 @@
   color: #d3cfc8;
 }
 @media (min-width: 901px) {
-  .ea-mobile-nav {
+  .ea-mobile-menu {
     display: none;
   }
 }
@@ -776,7 +865,8 @@
   .ea-desktop-nav {
     display: none;
   }
-  .ea-menu-button {
+  .ea-mobile-menu,
+  .ea-mobile-menu summary {
     display: flex;
   }
   .ea-header__demo {
@@ -811,6 +901,10 @@
   .ea-origin__layout {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  .ea-behaviors,
+  .ea-environments {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .ea-origin-visual {
     grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr);
@@ -969,6 +1063,16 @@
   .ea-system-line {
     gap: 12px;
   }
+  .ea-behaviors,
+  .ea-environments {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .ea-systems-summary {
+    margin-top: 48px;
+    padding-top: 32px;
+  }
   .ea-evidence > div {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -999,6 +1103,10 @@
   .ea-testimonial > p {
     font-size: 24px;
   }
+  .ea-external-validation {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
   .ea-close h2 {
     font-size: 44px;
   }
@@ -1025,7 +1133,9 @@
   .ea-entrance {
     display: none;
   }
-  .ea-hero__content {
+  .ea-hero__content,
+  .ea-hero__image,
+  .ea-message {
     animation: none;
   }
   .ea-origin-visual > i,

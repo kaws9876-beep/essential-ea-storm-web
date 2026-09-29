@@ -1,13 +1,11 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { Menu, ArrowUpRight } from 'lucide-react';
 import { contactConfig } from '@/components/site/content';
 
 const links = [
   { label: 'How it works', href: '#how-it-works' },
+  { label: 'Where it works', href: '#where-it-works' },
   { label: 'Proof', href: '#proof' },
   { label: 'Company', href: '#company' },
   { label: 'Investors', href: '#investors' },
@@ -18,19 +16,6 @@ export function Header({
 }: {
   sectionHrefPrefix?: string;
 }) {
-  const [open, setOpen] = useState(false);
-  const toggle = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    if (!open) return;
-    function closeOnEscape(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setOpen(false);
-        toggle.current?.focus();
-      }
-    }
-    document.addEventListener('keydown', closeOnEscape);
-    return () => document.removeEventListener('keydown', closeOnEscape);
-  }, [open]);
   return (
     <header className="ea-header">
       <div className="ea-container ea-header__row">
@@ -46,9 +31,9 @@ export function Header({
         </Link>
         <nav className="ea-desktop-nav" aria-label="Primary navigation">
           {links.map((l) => (
-            <Link key={l.href} href={`${sectionHrefPrefix}${l.href}`}>
+            <a key={l.href} href={`${sectionHrefPrefix}${l.href}`}>
               {l.label}
-            </Link>
+            </a>
           ))}
         </nav>
         <a
@@ -61,34 +46,20 @@ export function Header({
           Request Demo
           <ArrowUpRight size={18} aria-hidden="true" />
         </a>
-        <button
-          ref={toggle}
-          className="ea-menu-button"
-          aria-label={open ? 'Close navigation' : 'Open navigation'}
-          aria-expanded={open}
-          aria-controls="mobile-navigation"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
+        <details className="ea-mobile-menu">
+          <summary aria-label="Toggle navigation">
+            <Menu aria-hidden="true" />
+          </summary>
+          <nav id="mobile-navigation" className="ea-mobile-nav" aria-label="Mobile navigation">
+            {links.map((l) => (
+              <a key={l.href} href={`${sectionHrefPrefix}${l.href}`}>
+                {l.label}
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </a>
+            ))}
+          </nav>
+        </details>
       </div>
-      <nav
-        id="mobile-navigation"
-        className="ea-mobile-nav"
-        aria-label="Mobile navigation"
-        hidden={!open}
-      >
-        {links.map((l) => (
-          <Link
-            key={l.href}
-            href={`${sectionHrefPrefix}${l.href}`}
-            onClick={() => setOpen(false)}
-          >
-            {l.label}
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </Link>
-        ))}
-      </nav>
     </header>
   );
 }

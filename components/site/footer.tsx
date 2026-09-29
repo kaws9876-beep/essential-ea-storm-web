@@ -26,11 +26,12 @@ export function Footer({
           </p>
           <nav aria-label="Footer navigation">
             {[
-              ['Platform', '#brain-execution'],
-              ['Commercial', '#commercial'],
-              ['Government', '#government'],
+              ['How it works', '#how-it-works'],
+              ['Where it works', '#where-it-works'],
+              ['Ask STORM', '#product-proof'],
               ['Proof', '#proof'],
               ['Company', '#company'],
+              ['Engagements', '#engagements'],
               ['Investors', '#investors'],
               ['Contact', '#contact'],
             ].map(([label, href]) => (

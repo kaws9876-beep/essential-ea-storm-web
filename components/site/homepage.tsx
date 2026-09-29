@@ -178,149 +178,13 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
             </div>
           </div>
         </Band>
-        <Band id="existing-stack" label="Across the systems you already use">
-          <div className="ea-editorial">
-            <h2>
-              Most systems help you record work, report on work, or execute
-              work.
-            </h2>
-            <div className="ea-prose">
-              <p className="ea-emphasis">
-                EA STORM makes sure the right work moves in the first place.
-              </p>
-              <p className="ea-system-promise">
-                We don&apos;t replace the systems you use.
-                <br />
-                We work across them.
-              </p>
-              <p>
-                EA STORM brings together signals already living across your
-                systems, teams and workflows to show what needs attention, what
-                may be driving it, who should own it, and what should happen
-                next.
-              </p>
-            </div>
-          </div>
-          <p className="ea-system-line">
-            CRM <span>/</span> Email <span>/</span> Meetings <span>/</span>{' '}
-            Documents <span>/</span> Finance <span>/</span> Operations
-          </p>
-        </Band>
-        <Band
-          id="storm-origin"
-          label="The intelligence behind the name"
-          className="ea-dark ea-origin"
-        >
-          <h2>
-            Some things can&apos;t be dropped.
-            <br />
-            Some signals can&apos;t be missed.
-          </h2>
-          <figure className="ea-origin-visual">
-            <div>
-              <Image
-                src={storyImages.crystalBallDecision.src}
-                alt={storyImages.crystalBallDecision.alt}
-                width={1536}
-                height={1024}
-                unoptimized
-                loading="lazy"
-              />
-              <span>Crystal Ball / Questions protected</span>
-            </div>
-            <i aria-hidden="true" />
-            <div>
-              <Image
-                src={storyImages.stormSignalRouting.src}
-                alt={storyImages.stormSignalRouting.alt}
-                width={1536}
-                height={1024}
-                unoptimized
-                loading="lazy"
-              />
-              <span>Storm / Response in motion</span>
-            </div>
-            <figcaption>
-              Conceptual visualization of signal, recognition, movement and
-              response
-            </figcaption>
-          </figure>
-          <div className="ea-origin__layout">
-            <div className="ea-prose">
-              <p className="ea-label">Crystal Ball</p>
-              <p>
-                Early in Kristina Spencer’s career, in one of her first meetings
-                with a commander, the commander had two lucite boxes. One held
-                a crystal ball. The other held a tennis/bouncy ball.
-              </p>
-              <p>
-                The Crystal Ball represented the questions that could not be
-                dropped: Why does this matter? Who should own it? Should it be
-                automated? What oversight does it need? How will it be held
-                accountable? What was the outcome? What did we learn? What
-                problem did we solve?
-              </p>
-              <p>
-                Execution was the bouncy ball. Work can move, be handed off,
-                occasionally drop, and be recovered. The bouncy ball bounces.
-                The Crystal Ball shatters.
-              </p>
-            </div>
-            <div className="ea-prose">
-              <p className="ea-label">Storm</p>
-              <p>
-                Years later, after a staff meeting, Kristina was walking toward
-                the back of the office. She saw her co-founder Monica Vasquez’s
-                service animal, Storm, standing at attention near the office
-                door and appearing to need help releasing her leash.
-              </p>
-              <p>
-                Kristina released the leash. Storm immediately moved toward the
-                conference room. Monica was experiencing a seizure. Kristina
-                had not recognized what was happening. Storm had recognized the
-                signal and moved to assist Monica.
-              </p>
-              <p className="ea-note">
-                Monica Vasquez has explicitly approved public use of this
-                story.
-              </p>
-            </div>
-          </div>
-          <p className="ea-origin__closing">
-            Crystal Ball taught Kristina to protect the questions that matter.
-            Storm demonstrated the power of recognizing a consequential signal
-            and moving the appropriate response. Together, those lessons helped
-            shape the operating idea behind EA STORM.
-          </p>
-          <span id="signature-sequence" className="ea-anchor" />
-          <ol className="ea-role-sequence">
-            {[
-              'Crystal Ball determines.',
-              'Authority governs.',
-              'Storm executes.',
-              'Verification proves.',
-              'Memory learns.',
-            ].map((role, i) => (
-              <li key={role}>
-                <span className="ea-index">0{i + 1}</span>
-                <p>{role}</p>
-                {i < 4 && <ArrowRight size={18} aria-hidden="true" />}
-              </li>
-            ))}
-          </ol>
-        </Band>
+        <WhatEaStormDoesSection />
         <AskStormSection />
+        <WhereItWorksSection />
         <ProofSection />
-        <Band id="why-now" label="Why now" className="ea-dark ea-thesis">
-          <div className="ea-editorial">
-            <h2>Your systems know more than your organization acts on.</h2>
-            <p className="ea-lead">
-              More data, more software and more AI create more possible actions.
-              EA STORM helps determine which ones actually need to move.
-            </p>
-          </div>
-        </Band>
+        <OriginSection />
         <FounderSection />
+        <EngagementsSection />
         <InvestorSection campaign={campaign} />
         <Band id="contact" label="EA STORM" className="ea-close">
           <h2>Keep What Matters Moving.</h2>
@@ -340,6 +204,148 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function WhatEaStormDoesSection() {
+  const behaviors = [
+    ['Surfaces', 'What needs attention.'],
+    ['Connects', 'The context that explains why it matters.'],
+    ['Routes', 'The right work to the right owner.'],
+    ['Follows through', 'Until the result is visible.'],
+  ];
+  return (
+    <Band id="what-it-does" label="What EA STORM does" className="ea-white">
+      <h2>It sees across the work your systems see separately.</h2>
+      <div className="ea-behaviors">
+        {behaviors.map(([label, body], index) => (
+          <div key={label}>
+            <span className="ea-index">0{index + 1}</span>
+            <h3>{label}</h3>
+            <p>{body}</p>
+          </div>
+        ))}
+      </div>
+      <div className="ea-editorial ea-systems-summary">
+        <div>
+          <p className="ea-emphasis">
+            Most systems help you record work, report on work, or execute work.
+          </p>
+          <p>EA STORM makes sure the right work moves in the first place.</p>
+        </div>
+        <div className="ea-prose">
+          <p className="ea-system-promise">
+            We don&apos;t replace the systems you use.
+            <br />
+            We work across them.
+          </p>
+          <p>
+            EA STORM brings together signals already living across your systems,
+            teams and workflows to show what needs attention, what may be driving
+            it, who should own it, and what should happen next.
+          </p>
+        </div>
+      </div>
+      <p className="ea-system-line">
+        CRM <span>/</span> Email <span>/</span> Meetings <span>/</span> Documents{' '}
+        <span>/</span> Finance <span>/</span> Operations <span>/</span> Customer
+        activity <span>/</span> Workflows
+      </p>
+    </Band>
+  );
+}
+
+function WhereItWorksSection() {
+  const environments = [
+    ['Business Operations', 'See what is slowing the organization down, what needs attention and what should move next.'],
+    ['Agent Intelligence', 'Surface recruiting, retention and reengagement opportunities before they disappear into the database.'],
+    ['Investor Visibility', 'See meaningful changes across financial performance, milestones, execution and company health.'],
+    ['Government', 'Bring mission, resource, readiness and execution signals into the operating picture each echelon needs.'],
+  ];
+  return (
+    <Band id="where-it-works" label="Where EA STORM works" className="ea-white">
+      <h2>
+        Different environments.
+        <br />
+        Same operating questions.
+      </h2>
+      <div className="ea-environments">
+        {environments.map(([label, body], index) => (
+          <article key={label}>
+            <span className="ea-index">0{index + 1}</span>
+            <h3>{label}</h3>
+            <p>{body}</p>
+            {label === 'Government' && (
+              <p className="ea-note">Development-stage. Not represented as government-authorized.</p>
+            )}
+          </article>
+        ))}
+      </div>
+      <p className="ea-origin__closing ea-application-close">
+        What matters? Who owns it? What happens next?
+      </p>
+    </Band>
+  );
+}
+
+function OriginSection() {
+  return (
+    <Band id="storm-origin" label="The intelligence behind the name" className="ea-dark ea-origin">
+      <h2>
+        Some things can&apos;t be dropped.
+        <br />
+        Some signals can&apos;t be missed.
+      </h2>
+      <figure className="ea-origin-visual">
+        <div>
+          <Image src={storyImages.crystalBallDecision.src} alt={storyImages.crystalBallDecision.alt} width={1536} height={1024} unoptimized loading="lazy" />
+          <span>Crystal Ball / Questions protected</span>
+        </div>
+        <i aria-hidden="true" />
+        <div>
+          <Image src={storyImages.stormSignalRouting.src} alt={storyImages.stormSignalRouting.alt} width={1536} height={1024} unoptimized loading="lazy" />
+          <span>Storm / Response in motion</span>
+        </div>
+        <figcaption>Conceptual visualization of signal, recognition, movement and response</figcaption>
+      </figure>
+      <div className="ea-origin__layout">
+        <div className="ea-prose">
+          <p className="ea-label">Crystal Ball</p>
+          <p>
+            Early in Kristina Spencer&apos;s career, a commander taught her that some
+            questions could never be dropped: What matters? Who owns it? What
+            happens next? What happened? What did we learn?
+          </p>
+          <p>
+            The bouncy ball represented execution: work can move, be handed off,
+            drop and recover. The bouncy ball bounces. The Crystal Ball shatters.
+          </p>
+        </div>
+        <div className="ea-prose">
+          <p className="ea-label">Storm</p>
+          <p>
+            Years later, Kristina&apos;s co-founder Monica Vasquez&apos;s service animal,
+            Storm, recognized a medical emergency Kristina had not detected and
+            moved immediately to assist.
+          </p>
+        </div>
+      </div>
+      <p className="ea-origin__closing">
+        One lesson taught Kristina to protect the questions that matter. The
+        other demonstrated what happens when a consequential signal is recognized
+        in time and the right response moves. EA STORM was built around both.
+      </p>
+      <span id="signature-sequence" className="ea-anchor" />
+      <ol className="ea-role-sequence">
+        {['Crystal Ball determines.', 'Authority governs.', 'Storm executes.', 'Verification proves.', 'Memory learns.'].map((role, index) => (
+          <li key={role}>
+            <span className="ea-index">0{index + 1}</span>
+            <p>{role}</p>
+            {index < 4 && <ArrowRight size={18} aria-hidden="true" />}
+          </li>
+        ))}
+      </ol>
+    </Band>
   );
 }
 
@@ -492,10 +498,15 @@ function ProofSection() {
       </details>
       <blockquote className="ea-testimonial">
         <p>“{testimonials[0].quote}”</p>
-        <footer>
-          {testimonials[0].attribution} / {testimonials[0].organization}
-        </footer>
+        <footer>Verified EA STORM Client</footer>
       </blockquote>
+      <aside className="ea-external-validation" aria-label="External validation">
+        <p className="ea-label">External validation</p>
+        <p>
+          Selected for the 2026 PenFed Foundation Veteran Entrepreneur Program
+          — San Antonio Accelerator Cohort.
+        </p>
+      </aside>
     </Band>
   );
 }
@@ -535,6 +546,30 @@ function FounderSection() {
             <p>{f.bio}</p>
           </article>
         ))}
+      </div>
+    </Band>
+  );
+}
+
+function EngagementsSection() {
+  return (
+    <Band id="engagements" label="Engagements" className="ea-white">
+      <div className="ea-editorial">
+        <h2>Built around your operating environment.</h2>
+        <div>
+          <p className="ea-lead">
+            Deployment scope varies based on your systems, users and operating
+            needs.
+          </p>
+          <div className="ea-actions ea-engagement-actions">
+            <Action href={contactConfig.demoHref} event="platform_click">
+              Request Demo
+            </Action>
+            <Action href={contactConfig.demoHref} secondary event="pricing_click">
+              Request Pricing
+            </Action>
+          </div>
+        </div>
       </div>
     </Band>
   );

@@ -561,7 +561,7 @@ export const founderProfile = {
   headshot: '/founders/kristina-spencer.jpg',
   headshotAlt: 'Kristina Spencer, Co-Founder and CEO of EA STORM.',
   shortBio:
-    'Operator, strategist and executive leader working at the intersection of organizational execution, customer operations and AI-enabled decision intelligence. Kristina leads category strategy, customer discovery, commercialization and the operating methodology behind EA STORM.',
+    'Military spouse, operator, strategist and executive leader working at the intersection of organizational execution, customer operations and AI-enabled decision intelligence. Kristina leads category strategy, customer discovery, commercialization and the operating methodology behind EA STORM.',
   proofPoints: ['26+ year military spouse', 'Author', 'Executive operator'],
   founderMarketFit:
     'Kristina spent decades operating inside environments where fragmented information, competing priorities, changing conditions, human judgment and execution all had to work together. The operating problem came first. The software came second.',
