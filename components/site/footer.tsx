@@ -24,6 +24,23 @@ export function Footer({
             EA STORM identifies what needs attention, gets it to the right
             owner, and keeps it moving through the outcome.
           </p>
+          <address className="ea-footer__contact">
+            <strong>Kristina Spencer</strong>
+            <span>CEO &amp; Co-Founder</span>
+            <a href="mailto:kristina@essentialaistorm.com">
+              kristina@essentialaistorm.com
+            </a>
+            <a href="tel:+19372664496">937-266-4496</a>
+            <a
+              href="https://www.linkedin.com/in/kristina-spencer-ba42ab123/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Kristina Spencer on LinkedIn"
+              className="ea-footer__linkedin"
+            >
+              LinkedIn
+            </a>
+          </address>
           <nav aria-label="Footer navigation">
             {[
               ['How it works', '#how-it-works'],

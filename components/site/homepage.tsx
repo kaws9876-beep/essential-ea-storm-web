@@ -345,6 +345,18 @@ function OriginSection() {
           </li>
         ))}
       </ol>
+      <aside className="ea-brand-meaning" aria-label="Why EA STORM">
+        <p className="ea-label">Why EA STORM</p>
+        <div>
+          <h3>Every Action Steers Toward Our Real Mission.</h3>
+          <p>
+            Activity isn&apos;t the goal.
+            <br />
+            The right work moving toward what matters is.
+          </p>
+          <strong>Keep What Matters Moving.</strong>
+        </div>
+      </aside>
     </Band>
   );
 }
