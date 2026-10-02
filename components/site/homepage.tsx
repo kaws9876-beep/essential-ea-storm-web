@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import { AnalyticsListener } from '@/components/site/analytics-listener';
+import { AskStormExperience } from '@/components/site/ask-storm-experience';
 import {
   caseStudyMetrics,
   companyTraction,
@@ -132,9 +133,7 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
             ))}
           </div>
           <p className="ea-lead ea-question-support">
-            Your organization already has the information.
-            <br />
-            EA STORM helps turn what it knows into what happens next.
+            Turn what your organization knows into what happens next.
           </p>
         </Band>
         <Band
@@ -146,19 +145,14 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
             <h2>Important things get lost between knowing and doing.</h2>
             <div className="ea-prose">
               <p className="ea-pullquote">“I thought someone owned that.”</p>
-              <p>
-                The email existed. The CRM had information. The meeting surfaced
-                context. The dashboard showed data.
-              </p>
-              <p>Yet the right action may still fail to happen.</p>
+              <p>The information existed. The right action still failed to happen.</p>
               <p className="ea-emphasis">
                 When important things keep getting missed, leaders become the
                 fallback.
               </p>
               <p>
-                The same problems surface again. Teams fix what is urgent
-                instead of what is causing it. Leadership gets pulled back into
-                the business instead of having the space to lead it forward.
+                The same problems return. Teams fix what is urgent instead of
+                what is causing it. Leadership loses the space to lead forward.
               </p>
             </div>
           </div>
@@ -228,9 +222,6 @@ function WhatEaStormDoesSection() {
       </div>
       <div className="ea-editorial ea-systems-summary">
         <div>
-          <p className="ea-emphasis">
-            Most systems help you record work, report on work, or execute work.
-          </p>
           <p>EA STORM makes sure the right work moves in the first place.</p>
         </div>
         <div className="ea-prose">
@@ -240,9 +231,7 @@ function WhatEaStormDoesSection() {
             We work across them.
           </p>
           <p>
-            EA STORM brings together signals already living across your systems,
-            teams and workflows to show what needs attention, what may be driving
-            it, who should own it, and what should happen next.
+            It connects existing signals to attention, ownership and next action.
           </p>
         </div>
       </div>
@@ -308,32 +297,19 @@ function OriginSection() {
         </div>
         <figcaption>Conceptual visualization of signal, recognition, movement and response</figcaption>
       </figure>
-      <div className="ea-origin__layout">
-        <div className="ea-prose">
-          <p className="ea-label">Crystal Ball</p>
-          <p>
-            Early in Kristina Spencer&apos;s career, a commander taught her that some
-            questions could never be dropped: What matters? Who owns it? What
-            happens next? What happened? What did we learn?
-          </p>
-          <p>
-            The bouncy ball represented execution: work can move, be handed off,
-            drop and recover. The bouncy ball bounces. The Crystal Ball shatters.
-          </p>
-        </div>
-        <div className="ea-prose">
-          <p className="ea-label">Storm</p>
-          <p>
-            Years later, Kristina&apos;s co-founder Monica Vasquez&apos;s service animal,
-            Storm, recognized a medical emergency Kristina had not detected and
-            moved immediately to assist.
-          </p>
-        </div>
+      <div className="ea-origin__story">
+        <p>
+          Early in Kristina&apos;s career, a Wing Chaplain taught her to protect the
+          questions that matter. Years later, Storm—a service dog—recognized a
+          consequential signal Kristina had missed and moved immediately to help.
+        </p>
       </div>
       <p className="ea-origin__closing">
-        One lesson taught Kristina to protect the questions that matter. The
-        other demonstrated what happens when a consequential signal is recognized
-        in time and the right response moves. EA STORM was built around both.
+        Protect what matters.
+        <br />
+        Recognize the signal.
+        <br />
+        Move the right response.
       </p>
       <span id="signature-sequence" className="ea-anchor" />
       <ol className="ea-role-sequence">
@@ -371,61 +347,15 @@ function AskStormSection() {
       <div className="ea-editorial">
         <h2>Ask STORM.</h2>
         <div className="ea-prose">
-          <p className="ea-emphasis">Ask what&apos;s getting in the way.</p>
-          <p>
-            Ask a question. EA STORM brings together the relevant
-            organizational context, shows what requires attention, surfaces
-            what may be driving the issue, and proposes what should happen
-            next.
-          </p>
+          <p className="ea-emphasis">Choose what is getting in the way.</p>
+          <p>See how EA STORM moves from signal to verified action.</p>
         </div>
       </div>
       <p className="ea-note">
-        Synthetic product demonstration. No private customer data is displayed.
+        Illustrative product experience · Synthetic scenarios
       </p>
       <div className="ea-ask__experience">
-        <div className="ea-ask__conversation" aria-label="Ask STORM demonstration">
-          <div className="ea-message ea-message--user">
-            <p className="ea-label">You</p>
-            <p>What&apos;s getting in our way right now?</p>
-          </div>
-          <div className="ea-message">
-            <p className="ea-label">EA STORM</p>
-            <p>Three issues need attention.</p>
-            <ol className="ea-issue-list">
-              <li>Customer opportunity sitting untouched</li>
-              <li>Duplicative technology and system spend</li>
-              <li>Workflow and handoff breakdown</li>
-            </ol>
-          </div>
-          <div className="ea-message ea-message--user">
-            <p className="ea-label">You</p>
-            <p>What should we do first?</p>
-          </div>
-          <div className="ea-message">
-            <p className="ea-label">EA STORM</p>
-            <p>
-              Review the untouched customer opportunity first. Confirm the
-              owner, deadline and authority before action.
-            </p>
-          </div>
-          <div className="ea-ask__context">
-            {[
-              ['Why this surfaced', 'No recent activity against an open opportunity'],
-              ['Evidence', 'CRM activity · customer behavior · workflow history'],
-              ['Owner', 'Confirm accountable relationship owner'],
-              ['Next action', 'Review context and approve the proposed follow-up'],
-              ['Authority', 'Human approval required before execution'],
-              ['Verification', 'Track response and resulting status'],
-              ['Outcome', 'Return the result to organizational memory'],
-            ].map(([label, value]) => (
-              <div key={label}>
-                <p className="ea-label">{label}</p>
-                <p>{value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <AskStormExperience demoHref={contactConfig.demoHref} />
         <figure className="ea-ask__command">
           <figcaption>
             <p className="ea-label">Integrated operating context</p>
@@ -447,8 +377,7 @@ function AskStormSection() {
               />
           </a>
           <p className="ea-note">
-            The conversation is an interface into governed organizational
-            context—not a chatbot beside a dashboard.
+            Governed organizational context—not a chatbot beside a dashboard.
           </p>
         </figure>
       </div>
@@ -513,11 +442,24 @@ function ProofSection() {
         <footer>Verified EA STORM Client</footer>
       </blockquote>
       <aside className="ea-external-validation" aria-label="External validation">
-        <p className="ea-label">External validation</p>
-        <p>
-          Selected for the 2026 PenFed Foundation Veteran Entrepreneur Program
-          — San Antonio Accelerator Cohort.
-        </p>
+        <div className="ea-external-validation__mark">
+          <p className="ea-label">External validation</p>
+          <Image
+            src="/brand/penfed-foundation-veteran-entrepreneur-participant.webp"
+            alt="Proud participant of the PenFed Foundation for Military Heroes Veteran Entrepreneur Program"
+            width={760}
+            height={218}
+            unoptimized
+            loading="lazy"
+          />
+        </div>
+        <div className="ea-external-validation__statement">
+          <p className="ea-label">Selected · 2026</p>
+          <p>
+            Selected for the 2026 PenFed Foundation Veteran Entrepreneur Program
+            — San Antonio Accelerator Cohort.
+          </p>
+        </div>
       </aside>
     </Band>
   );

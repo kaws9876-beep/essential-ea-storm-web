@@ -41,3 +41,25 @@ and investor statements do not blur together.
   and investor funnels.
 - Government authorization claims are withheld because no validation exists for
   FedRAMP, ATO, IL4, IL5, CUI, classified, or DoD production authorization.
+
+## Phase 2 Impact Roadmap
+
+These founder-directed initiatives are future objectives for exploration. They
+are not current public programs, commitments, employment openings, fundraising
+activities, or launch promises.
+
+### Military-Spouse Remote Employment
+
+As EA STORM grows, explore and intentionally create meaningful remote employment
+opportunities compatible with military-family mobility, particularly for
+military spouses.
+
+### Special-Needs Children / Family Foundation
+
+Explore establishing a separately governed philanthropic initiative or
+foundation supporting children with special needs and their families as EA
+STORM reaches the appropriate stage of growth.
+
+No foundation currently exists through this roadmap entry. No donations,
+revenue percentage, formal employment program, current openings, or launch date
+are represented or committed.
