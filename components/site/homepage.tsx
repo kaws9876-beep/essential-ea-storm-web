@@ -5,6 +5,7 @@ import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import { AnalyticsListener } from '@/components/site/analytics-listener';
 import { AskStormExperience } from '@/components/site/ask-storm-experience';
+import { CinematicThreshold } from '@/components/site/cinematic-threshold';
 import {
   caseStudyMetrics,
   companyTraction,
@@ -68,6 +69,7 @@ const questions = ['What matters?', 'Who owns it?', 'What happens next?'];
 export function HomePage({ campaign }: { campaign?: 'penfed' }) {
   return (
     <div className="ea-site">
+      <CinematicThreshold />
       <AnalyticsListener campaign={campaign} />
       <Header />
       <main id="main-content">
@@ -89,7 +91,7 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
           </div>
           <div className="ea-container ea-hero__content">
             <p className="ea-label">EA STORM</p>
-            <h1 id="hero-title">
+            <h1 id="hero-title" tabIndex={-1}>
               Keep What
               <br className="ea-mobile-break" /> Matters Moving.
             </h1>
