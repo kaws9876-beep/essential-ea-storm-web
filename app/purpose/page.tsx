@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Header } from '@/components/site/header';
@@ -17,17 +18,46 @@ export default function PurposePage() {
     <div className="ea-site ea-purpose-page">
       <Header sectionHrefPrefix="/" />
       <main id="main-content">
-        <section className="ea-purpose-hero" aria-labelledby="purpose-title">
-          <div className="ea-container">
-            <p className="ea-label">Purpose & Impact</p>
-            <h1 id="purpose-title">
-              What we build matters.
-              <br />
-              What it makes possible matters more.
-            </h1>
-            <p className="ea-purpose-hero__lead">
-              But our vision goes beyond technology.
-            </p>
+        <section className="ea-purpose-hero" aria-label="Purpose and Impact">
+          <Image
+            className="ea-purpose-hero__image ea-purpose-hero__desktop"
+            src="/brand/purpose/purpose-human-horizon-approved.png"
+            alt="EA STORM Purpose and Impact. What we build matters. What it makes possible matters more. People, opportunity, stronger tomorrows. Greater people, stronger organizations, brighter tomorrows."
+            width={1536}
+            height={1024}
+            sizes="100vw"
+            unoptimized
+            priority
+          />
+          <div className="ea-purpose-hero__mobile">
+            <div className="ea-purpose-hero__mobile-copy">
+              <p className="ea-purpose-hero__mobile-brand">EA STORM</p>
+              <p className="ea-purpose-hero__mobile-tagline">
+                Keep What Matters Moving.
+              </p>
+              <span aria-hidden="true" />
+              <h1>
+                What we build matters.
+                <em>What it makes possible matters more.</em>
+              </h1>
+            </div>
+            <div className="ea-purpose-hero__mobile-scene" aria-hidden="true">
+              <Image
+                src="/brand/purpose/purpose-human-horizon-approved.png"
+                alt=""
+                width={1536}
+                height={1024}
+                sizes="165vw"
+                unoptimized
+                priority
+              />
+            </div>
+            <div className="ea-purpose-hero__mobile-footer">
+              <p aria-label="People, Opportunity, Stronger Tomorrows">
+                People <span aria-hidden="true">|</span> Opportunity{' '}
+                <span aria-hidden="true">|</span> Stronger Tomorrows
+              </p>
+            </div>
           </div>
         </section>
 
