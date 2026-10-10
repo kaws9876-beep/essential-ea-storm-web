@@ -133,7 +133,6 @@ export function CinematicThreshold() {
           priority
         />
         <p id="threshold-title">Keep What Matters Moving.</p>
-        <p className="ea-threshold__microcopy">People | Operations | Possibilities</p>
         <a
           ref={enterRef}
           className="ea-threshold__enter"

@@ -8,6 +8,7 @@ const links = [
   { label: 'Where it works', href: '#where-it-works' },
   { label: 'Proof', href: '#proof' },
   { label: 'Company', href: '#company' },
+  { label: 'Purpose', href: '/purpose', absolute: true },
   { label: 'Investors', href: '#investors' },
 ];
 
@@ -31,7 +32,10 @@ export function Header({
         </Link>
         <nav className="ea-desktop-nav" aria-label="Primary navigation">
           {links.map((l) => (
-            <a key={l.href} href={`${sectionHrefPrefix}${l.href}`}>
+            <a
+              key={l.href}
+              href={l.absolute ? l.href : `${sectionHrefPrefix}${l.href}`}
+            >
               {l.label}
             </a>
           ))}
@@ -50,9 +54,16 @@ export function Header({
           <summary aria-label="Toggle navigation">
             <Menu aria-hidden="true" />
           </summary>
-          <nav id="mobile-navigation" className="ea-mobile-nav" aria-label="Mobile navigation">
+          <nav
+            id="mobile-navigation"
+            className="ea-mobile-nav"
+            aria-label="Mobile navigation"
+          >
             {links.map((l) => (
-              <a key={l.href} href={`${sectionHrefPrefix}${l.href}`}>
+              <a
+                key={l.href}
+                href={l.absolute ? l.href : `${sectionHrefPrefix}${l.href}`}
+              >
                 {l.label}
                 <ArrowUpRight size={18} aria-hidden="true" />
               </a>

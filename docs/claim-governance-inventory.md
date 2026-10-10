@@ -26,7 +26,12 @@ and investor statements do not blur together.
 | Real founder portraits | APPROVED FOUNDER EVIDENCE | Founder-supplied portraits at `public/founders/kristina-spencer.jpg` and `public/founders/monica-vasquez.jpg` | Current approved website evidence | Public | Portraits are individual professional founder assets with equal visual prominence. |
 | Real product screenshots | PRODUCT CAPABILITY / PRODUCT EVIDENCE | Founder-approved screenshots at `public/product/command-center.webp`, `public/product/signal-intelligence.webp`, and `public/product/universal-client-hub.webp` | Current approved website evidence | Public | Product proof slots render real approved interface evidence. |
 | Four cinematic frames | CONCEPTUAL / EXPLANATORY VISUALIZATION | Founder-supplied cinematic frames at `public/story/crystal-ball-ingest.webp`, `public/story/crystal-ball-decision.webp`, `public/story/storm-signal-routing.webp`, and `public/story/verification-outcome.webp` | Current approved website visualization | Public | Cinematic imagery is explanatory visualization and is not live product UI. |
-| Storm origin story | FOUNDER / PRODUCT ORIGIN NARRATIVE | Founder-approved Phase 5.2A narrative direction | Current origin narrative | Public | Story is limited to signal recognition and does not disclose medical information or portray Storm as a mascot. |
+| Storm origin story | FOUNDER / PRODUCT ORIGIN NARRATIVE | Founder-approved V3.1 connected origin narrative, October 2026 | Current origin narrative | Public | Preserves the Wing Chaplain / crystal ball and bouncing ball history and Storm's signal recognition. It does not disclose medical information, medical outcomes, permissions or endorsements, and does not portray Storm as a mascot. |
+| EA STORM is a military-spouse-founded technology company | FOUNDER / COMPANY NARRATIVE | Founder-approved V3 canonical narrative, October 2026 | Current company narrative | Public | Describes the company foundation; it is not a representation of current hiring or an employment program. |
+| Strengthen marriages and families through our ongoing work with Valor & Vows, a military marriage ministry. | PURPOSE / ACTIVE INITIATIVE | Founder-approved V3 canonical narrative, October 2026 | Current purpose narrative | Public | Valor & Vows is an established ministry. Do not imply that it is owned or operated by EA STORM. |
+| Support military families and expand meaningful remote employment opportunities for military spouses. | PURPOSE / INTENDED IMPACT | Founder-approved V3 canonical narrative, October 2026 | Company-growth aspiration | Public with boundary | Does not represent current open roles, a formal employment program, or a hiring commitment. |
+| Serve individuals with special needs and their families through philanthropic initiatives. | PURPOSE / INTENDED IMPACT | Founder-approved V3 canonical narrative, October 2026 | Company-growth aspiration | Public with boundary | Does not represent an existing EA STORM foundation, current donation program, committed revenue percentage, or launch date. |
+| Purpose & Impact photography | ASSET / RIGHTS GOVERNANCE | Founder-supplied and founder-approved Purpose image set, October 2026 | Illustrative photography for four approved impact themes | Public | Objective alt text describes the depicted scenes; public copy does not represent the people shown as EA STORM employees, program participants, ministry participants or beneficiaries. Founder must retain documentation of usage rights, model releases and any permissions required for identifiable children before deployment. |
 | Customer demo contact path | LAUNCH CONTROL / CONTACT PATH | Founder-approved Google Appointment Schedule at `https://calendar.app.google/rj3NJFsePJbs99XP9` | Current approved conversion route | Public | Customer demo traffic routes to the appointment schedule and remains separate from investor intake. |
 | Investor materials contact path | LAUNCH CONTROL / CONTACT PATH | Founder-approved Google Investor Information Request Form at `https://forms.gle/sruxD4USyofXMpRh8` | Current approved conversion route | Public | Investor traffic routes to the investor form and does not expose private diligence materials. |
 | Privacy Policy implementation | LAUNCH CONTROL / PRIVACY | Founder-approved privacy policy content for `essentialaistorm.com` and `privacy@essentialaistorm.com` | Current launch privacy control | Public | Engineering implementation complete at `/privacy`; final founder/legal pre-deployment review remains required. |
@@ -42,24 +47,26 @@ and investor statements do not blur together.
 - Government authorization claims are withheld because no validation exists for
   FedRAMP, ATO, IL4, IL5, CUI, classified, or DoD production authorization.
 
-## Phase 2 Impact Roadmap
+## V3 Purpose Claim Boundaries
 
-These founder-directed initiatives are future objectives for exploration. They
-are not current public programs, commitments, employment openings, fundraising
-activities, or launch promises.
+The founder-approved purpose statements above may be presented publicly when
+their current status remains clear. The military-family, remote-employment and
+special-needs statements describe opportunities the founders intend business
+success to help create. They are not current programs, employment openings,
+fundraising activities or launch promises.
 
 ### Military-Spouse Remote Employment
 
-As EA STORM grows, explore and intentionally create meaningful remote employment
-opportunities compatible with military-family mobility, particularly for
-military spouses.
+Approved public statement: Support military families and expand meaningful
+remote employment opportunities for military spouses.
 
-### Special-Needs Children / Family Foundation
+Current boundary: EA STORM does not represent that it currently has open roles
+or operates a formal military-spouse employment program.
 
-Explore establishing a separately governed philanthropic initiative or
-foundation supporting children with special needs and their families as EA
-STORM reaches the appropriate stage of growth.
+### Special-Needs Philanthropy
 
-No foundation currently exists through this roadmap entry. No donations,
-revenue percentage, formal employment program, current openings, or launch date
-are represented or committed.
+Approved public statement: Serve individuals with special needs and their
+families through philanthropic initiatives.
+
+Current boundary: No EA STORM foundation or donation program currently exists.
+No donations, revenue percentage or launch date are represented or committed.

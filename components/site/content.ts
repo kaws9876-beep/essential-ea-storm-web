@@ -396,7 +396,7 @@ export const schraderCaseStudy = {
   context:
     'Essential EA + AI Storm OS helped create an intelligence and execution layer across the operation, connecting what deserved attention to accountable next action.',
   attributionBoundary:
-    'Outcomes are described as occurring during the Essential EA + AI Storm OS transformation. They are not presented as controlled scientific attribution to AI Storm OS alone.',
+    'Outcomes reported during the EA STORM transformation period.',
   problem: [
     'owner bottleneck',
     'multiple systems without shared context',
@@ -561,7 +561,7 @@ export const founderProfile = {
   headshot: '/founders/kristina-spencer.jpg',
   headshotAlt: 'Kristina Spencer, Co-Founder and CEO of EA STORM.',
   shortBio:
-    'Military spouse, operator, strategist and executive leader working at the intersection of organizational execution, customer operations and AI-enabled decision intelligence. Kristina leads category strategy, customer discovery, commercialization and the operating methodology behind EA STORM.',
+    "Military spouse, business strategist, executive leader, and hands-on co-architect of EA STORM's product and technology, leading its vision, development, and customer strategy.",
   proofPoints: ['26+ year military spouse', 'Author', 'Executive operator'],
   founderMarketFit:
     'Kristina spent decades operating inside environments where fragmented information, competing priorities, changing conditions, human judgment and execution all had to work together. The operating problem came first. The software came second.',

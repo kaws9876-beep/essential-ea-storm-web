@@ -17,18 +17,18 @@ const ebGaramond = EB_Garamond({
 export const metadata: Metadata = {
   title: 'EA STORM | Keep What Matters Moving.',
   description:
-    'EA STORM identifies what needs attention, gets it to the right owner, and keeps it moving through the outcome.',
+    'EA STORM is an intelligence platform designed to identify what matters, put the right work in the right hands, and turn decisions into accountable action and verified results.',
   openGraph: {
     title: 'EA STORM | Keep What Matters Moving.',
     description:
-      'EA STORM identifies what needs attention, gets it to the right owner, and keeps it moving through the outcome.',
+      'EA STORM is an intelligence platform designed to identify what matters, put the right work in the right hands, and turn decisions into accountable action and verified results.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'EA STORM | Keep What Matters Moving.',
     description:
-      'EA STORM identifies what needs attention, gets it to the right owner, and keeps it moving through the outcome.',
+      'EA STORM is an intelligence platform designed to identify what matters, put the right work in the right hands, and turn decisions into accountable action and verified results.',
   },
 };
 

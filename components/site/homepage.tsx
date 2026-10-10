@@ -65,7 +65,11 @@ function Action({
   );
 }
 
-const questions = ['What matters?', 'Who owns it?', 'What happens next?'];
+const promises = [
+  "Know what's important.",
+  "Trust what's being handled.",
+  "Focus on what's next.",
+];
 export function HomePage({ campaign }: { campaign?: 'penfed' }) {
   return (
     <div className="ea-site">
@@ -95,13 +99,16 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
               Keep What
               <br className="ea-mobile-break" /> Matters Moving.
             </h1>
+            <p className="ea-hero__hook">
+              Your business shouldn&apos;t depend on you to keep everything
+              moving.
+            </p>
             <div className="ea-hero__bottom">
               <p className="ea-hero__promise">
-                Identify what needs attention.
-                <br />
-                Get it to the right owner.
-                <br />
-                Keep it moving through the outcome.
+                That&apos;s why we built EA STORM, an intelligence platform
+                designed to work across the systems businesses already use to
+                identify what matters, put the right work in the right hands,
+                and turn decisions into accountable action and verified results.
               </p>
               <div className="ea-actions">
                 <Action href="#how-it-works" event="hero_demo_click">
@@ -127,15 +134,15 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
         </section>
         <Band id="how-it-works" className="ea-questions">
           <div className="ea-question-row">
-            {questions.map((q, i) => (
-              <div key={q}>
+            {promises.map((promise, i) => (
+              <div key={promise}>
                 <span className="ea-index">0{i + 1}</span>
-                <h2>{q}</h2>
+                <h2>{promise}</h2>
               </div>
             ))}
           </div>
           <p className="ea-lead ea-question-support">
-            Turn what your organization knows into what happens next.
+            A business should be able to grow without becoming harder to run.
           </p>
         </Band>
         <Band
@@ -144,32 +151,24 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
           className="ea-white"
         >
           <div className="ea-editorial">
-            <h2>Important things get lost between knowing and doing.</h2>
+            <h2>
+              Because growing your business shouldn&apos;t mean carrying more of
+              it yourself.
+            </h2>
             <div className="ea-prose">
-              <p className="ea-pullquote">“I thought someone owned that.”</p>
-              <p>The information existed. The right action still failed to happen.</p>
+              <p className="ea-pullquote">
+                Important things get lost between knowing and doing.
+              </p>
+              <p>
+                The information existed. The right action still failed to
+                happen.
+              </p>
               <p className="ea-emphasis">
                 When important things keep getting missed, leaders become the
                 fallback.
               </p>
               <p>
-                The same problems return. Teams fix what is urgent instead of
-                what is causing it. Leadership loses the space to lead forward.
-              </p>
-            </div>
-          </div>
-        </Band>
-        <Band id="root-cause" label="Recurring issues">
-          <div className="ea-editorial">
-            <h2>Stop treating the symptom.</h2>
-            <div className="ea-prose">
-              <p className="ea-pullquote">
                 The fire gets put out. The reason it started is still there.
-              </p>
-              <p>
-                EA STORM brings related signals and organizational context
-                together so teams can see what may be driving a recurring
-                issue—not just what is showing up on the surface.
               </p>
             </div>
           </div>
@@ -180,17 +179,18 @@ export function HomePage({ campaign }: { campaign?: 'penfed' }) {
         <ProofSection />
         <OriginSection />
         <FounderSection />
+        <PurposePreviewSection />
         <EngagementsSection />
         <InvestorSection campaign={campaign} />
         <Band id="contact" label="EA STORM" className="ea-close">
           <h2>Keep What Matters Moving.</h2>
           <div className="ea-close__bottom">
             <p className="ea-lead">
-              Know what matters.
+              Know what&apos;s important.
               <br />
-              Know who owns it.
+              Trust what&apos;s being handled.
               <br />
-              Keep it moving.
+              Focus on what&apos;s next.
             </p>
             <Action href={contactConfig.demoHref} event="platform_click">
               Request Demo
@@ -212,7 +212,9 @@ function WhatEaStormDoesSection() {
   ];
   return (
     <Band id="what-it-does" label="What EA STORM does" className="ea-white">
-      <h2>It sees across the work your systems see separately.</h2>
+      <h2>
+        An intelligence platform for accountable action and verified results.
+      </h2>
       <div className="ea-behaviors">
         {behaviors.map(([label, body], index) => (
           <div key={label}>
@@ -222,10 +224,7 @@ function WhatEaStormDoesSection() {
           </div>
         ))}
       </div>
-      <div className="ea-editorial ea-systems-summary">
-        <div>
-          <p>EA STORM makes sure the right work moves in the first place.</p>
-        </div>
+      <div className="ea-systems-summary">
         <div className="ea-prose">
           <p className="ea-system-promise">
             We don&apos;t replace the systems you use.
@@ -233,14 +232,15 @@ function WhatEaStormDoesSection() {
             We work across them.
           </p>
           <p>
-            It connects existing signals to attention, ownership and next action.
+            EA STORM helps organizations turn important priorities into
+            accountable action and verified results.
           </p>
         </div>
       </div>
       <p className="ea-system-line">
-        CRM <span>/</span> Email <span>/</span> Meetings <span>/</span> Documents{' '}
-        <span>/</span> Finance <span>/</span> Operations <span>/</span> Customer
-        activity <span>/</span> Workflows
+        CRM <span>/</span> Email <span>/</span> Meetings <span>/</span>{' '}
+        Documents <span>/</span> Finance <span>/</span> Operations{' '}
+        <span>/</span> Customer activity <span>/</span> Workflows
       </p>
     </Band>
   );
@@ -248,10 +248,22 @@ function WhatEaStormDoesSection() {
 
 function WhereItWorksSection() {
   const environments = [
-    ['Business Operations', 'See what is slowing the organization down, what needs attention and what should move next.'],
-    ['Agent Intelligence', 'Surface recruiting, retention and reengagement opportunities before they disappear into the database.'],
-    ['Investor Visibility', 'See meaningful changes across financial performance, milestones, execution and company health.'],
-    ['Government', 'Bring mission, resource, readiness and execution signals into the operating picture each echelon needs.'],
+    [
+      'Business Operations',
+      'See what is slowing the organization down, what needs attention and what should move next.',
+    ],
+    [
+      'Agent Intelligence',
+      'Surface recruiting, retention and reengagement opportunities before they disappear into the database.',
+    ],
+    [
+      'Investor Visibility',
+      'See meaningful changes across financial performance, milestones, execution and company health.',
+    ],
+    [
+      'Government',
+      'Bring mission, resource, readiness and execution signals into the operating picture each echelon needs.',
+    ],
   ];
   return (
     <Band id="where-it-works" label="Where EA STORM works" className="ea-white">
@@ -267,7 +279,9 @@ function WhereItWorksSection() {
             <h3>{label}</h3>
             <p>{body}</p>
             {label === 'Government' && (
-              <p className="ea-note">Development-stage. Not represented as government-authorized.</p>
+              <p className="ea-note">
+                Development-stage. Not represented as government-authorized.
+              </p>
             )}
           </article>
         ))}
@@ -281,7 +295,11 @@ function WhereItWorksSection() {
 
 function OriginSection() {
   return (
-    <Band id="storm-origin" label="The intelligence behind the name" className="ea-dark ea-origin">
+    <Band
+      id="storm-origin"
+      label="The intelligence behind the name"
+      className="ea-dark ea-origin"
+    >
       <h2>
         Some things can&apos;t be dropped.
         <br />
@@ -289,33 +307,54 @@ function OriginSection() {
       </h2>
       <figure className="ea-origin-visual">
         <div>
-          <Image src={storyImages.crystalBallDecision.src} alt={storyImages.crystalBallDecision.alt} width={1536} height={1024} unoptimized loading="lazy" />
+          <Image
+            src={storyImages.crystalBallDecision.src}
+            alt={storyImages.crystalBallDecision.alt}
+            width={1536}
+            height={1024}
+            unoptimized
+            loading="lazy"
+          />
           <span>Crystal Ball / Questions protected</span>
         </div>
         <i aria-hidden="true" />
         <div>
-          <Image src={storyImages.stormSignalRouting.src} alt={storyImages.stormSignalRouting.alt} width={1536} height={1024} unoptimized loading="lazy" />
+          <Image
+            src={storyImages.stormSignalRouting.src}
+            alt={storyImages.stormSignalRouting.alt}
+            width={1536}
+            height={1024}
+            unoptimized
+            loading="lazy"
+          />
           <span>Storm / Response in motion</span>
         </div>
-        <figcaption>Conceptual visualization of signal, recognition, movement and response</figcaption>
       </figure>
       <div className="ea-origin__story">
         <p>
-          Early in Kristina&apos;s career, a Wing Chaplain taught her to protect the
-          questions that matter. Years later, Storm—a service dog—recognized a
-          consequential signal Kristina had missed and moved immediately to help.
+          Early in Kristina&apos;s career, a Wing Chaplain used a crystal ball
+          and a bouncing ball to teach her an important lesson: know what must
+          be protected, even as everything else keeps moving.
+        </p>
+        <p>
+          Years later, Storm, the service dog of Co-Founder and CTO Monica,
+          recognized a critical signal that others had missed and immediately
+          responded when Monica needed her.
         </p>
       </div>
       <p className="ea-origin__closing">
-        Protect what matters.
-        <br />
-        Recognize the signal.
-        <br />
-        Move the right response.
+        One taught us what matters most. The other showed us the power of acting
+        when it matters. Together, they inspired EA STORM.
       </p>
       <span id="signature-sequence" className="ea-anchor" />
       <ol className="ea-role-sequence">
-        {['Crystal Ball determines.', 'Authority governs.', 'Storm executes.', 'Verification proves.', 'Memory learns.'].map((role, index) => (
+        {[
+          'Crystal Ball determines.',
+          'Authority governs.',
+          'Storm executes.',
+          'Verification proves.',
+          'Memory learns.',
+        ].map((role, index) => (
           <li key={role}>
             <span className="ea-index">0{index + 1}</span>
             <p>{role}</p>
@@ -323,18 +362,34 @@ function OriginSection() {
           </li>
         ))}
       </ol>
-      <aside className="ea-brand-meaning" aria-label="Why EA STORM">
-        <p className="ea-label">Why EA STORM</p>
-        <div>
-          <h3>Every Action Steers Toward Our Real Mission.</h3>
+    </Band>
+  );
+}
+
+function PurposePreviewSection() {
+  return (
+    <Band
+      id="purpose"
+      label="Purpose & Impact"
+      className="ea-white ea-purpose-preview"
+    >
+      <div className="ea-editorial">
+        <h2>
+          What we build matters.
+          <br />
+          What it makes possible matters more.
+        </h2>
+        <div className="ea-prose">
+          <p className="ea-emphasis">But our vision goes beyond technology.</p>
           <p>
-            Activity isn&apos;t the goal.
-            <br />
-            The right work moving toward what matters is.
+            As a military-spouse-founded technology company, we believe business
+            success should create opportunities beyond the business.
           </p>
-          <strong>Keep What Matters Moving.</strong>
+          <Action href="/purpose" secondary>
+            Explore Purpose & Impact
+          </Action>
         </div>
-      </aside>
+      </div>
     </Band>
   );
 }
@@ -369,14 +424,14 @@ function AskStormSection() {
             rel="noopener noreferrer"
             aria-label="Inspect the Operator Command Center screenshot"
           >
-              <Image
-                src="/product/command-center.webp"
-                alt="Operator Command Center interface showing prioritized operational signals and execution work."
-                width={1536}
-                height={1024}
-                unoptimized
-                loading="lazy"
-              />
+            <Image
+              src="/product/command-center.webp"
+              alt="Operator Command Center interface showing prioritized operational signals and execution work."
+              width={1536}
+              height={1024}
+              unoptimized
+              loading="lazy"
+            />
           </a>
           <p className="ea-note">
             Governed organizational context—not a chatbot beside a dashboard.
@@ -415,7 +470,6 @@ function ProofSection() {
               <p className="ea-number">{m.value}</p>
               <div>
                 <h3>{m.label}</h3>
-                <p className="ea-note">{m.sourceNote}</p>
               </div>
             </div>
           ))}
@@ -443,7 +497,10 @@ function ProofSection() {
         <p>“{testimonials[0].quote}”</p>
         <footer>Verified EA STORM Client</footer>
       </blockquote>
-      <aside className="ea-external-validation" aria-label="External validation">
+      <aside
+        className="ea-external-validation"
+        aria-label="External validation"
+      >
         <div className="ea-external-validation__mark">
           <p className="ea-label">External validation</p>
           <Image
@@ -521,7 +578,11 @@ function EngagementsSection() {
             <Action href={contactConfig.demoHref} event="platform_click">
               Request Demo
             </Action>
-            <Action href={contactConfig.demoHref} secondary event="pricing_click">
+            <Action
+              href={contactConfig.demoHref}
+              secondary
+              event="pricing_click"
+            >
               Request Pricing
             </Action>
           </div>

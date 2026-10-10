@@ -48,11 +48,17 @@ export function Footer({
               ['Ask STORM', '#product-proof'],
               ['Proof', '#proof'],
               ['Company', '#company'],
+              ['Purpose & Impact', '/purpose'],
               ['Engagements', '#engagements'],
               ['Investors', '#investors'],
               ['Contact', '#contact'],
             ].map(([label, href]) => (
-              <Link key={href} href={`${sectionHrefPrefix}${href}`}>
+              <Link
+                key={href}
+                href={
+                  href.startsWith('/') ? href : `${sectionHrefPrefix}${href}`
+                }
+              >
                 {label}
               </Link>
             ))}

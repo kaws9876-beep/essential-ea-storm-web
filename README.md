@@ -19,6 +19,8 @@ Memory learns. Existing legal-entity references and historical customer quotatio
 are preserved; a brand change does not establish a new legal entity.
 
 Current messaging and visual governance:
+
+- [Canonical messaging & purpose v3](docs/ea-storm-canonical-messaging-v3.md)
 - [Canonical messaging](docs/ea-storm-canonical-messaging-v1.md)
 - [Master brand system](docs/ea-storm-master-brand-system-v1.md)
 - [Step 3 implementation and review notes](docs/ea-storm-step3-review.md)
