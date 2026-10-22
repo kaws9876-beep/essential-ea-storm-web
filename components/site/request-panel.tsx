@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
 import { track } from '@/lib/analytics';
 import type { AnalyticsEvent } from '@/lib/analytics';
@@ -79,7 +78,7 @@ export function RequestPanel({
       </div>
 
       {actionHref ? (
-        <Link
+        <a
           className="mt-8 inline-flex min-h-12 items-center justify-center border border-[var(--storm-cream)] bg-[var(--storm-cream)] px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[var(--storm-black)] transition hover:border-[var(--storm-gold)] hover:bg-[var(--storm-gold)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--storm-gold)]"
           data-analytics-event={actionEvent}
           href={actionHref}
@@ -87,7 +86,7 @@ export function RequestPanel({
           target="_blank"
         >
           {actionLabel}
-        </Link>
+        </a>
       ) : (
         <button
           className="mt-8 inline-flex min-h-12 items-center justify-center border border-[var(--storm-cream)] bg-[var(--storm-cream)] px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[var(--storm-black)] transition hover:border-[var(--storm-gold)] hover:bg-[var(--storm-gold)] disabled:cursor-not-allowed disabled:border-current/20 disabled:bg-transparent disabled:text-current/42"

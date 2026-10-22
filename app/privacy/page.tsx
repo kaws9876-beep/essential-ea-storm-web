@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import {
@@ -180,12 +179,12 @@ export default function PrivacyPage() {
                   communicate with us, or otherwise interact with our public
                   website and business.
                 </p>
-                <Link
+                <a
                   className="mt-8 inline-flex min-h-12 items-center justify-center border border-[var(--storm-cream)] px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[var(--storm-cream)] transition hover:border-[var(--storm-gold)] hover:text-[var(--storm-gold)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--storm-gold)]"
                   href="/"
                 >
                   Return to Main Website
-                </Link>
+                </a>
               </div>
             </div>
           </Container>

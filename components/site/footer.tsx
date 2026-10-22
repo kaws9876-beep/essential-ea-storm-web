@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 export function Footer({
   sectionHrefPrefix = '',
@@ -10,7 +9,7 @@ export function Footer({
     <footer className="ea-footer">
       <div className="ea-container">
         <div className="ea-footer__top">
-          <Link href="/" aria-label="EA STORM homepage">
+          <a href="/" aria-label="EA STORM homepage">
             <Image
               src="/brand/ea-storm-gold.png"
               alt="EA STORM — Keep What Matters Moving."
@@ -19,7 +18,7 @@ export function Footer({
               unoptimized
               className="ea-footer__logo"
             />
-          </Link>
+          </a>
           <p>
             EA STORM identifies what needs attention, gets it to the right
             owner, and keeps it moving through the outcome.
@@ -53,16 +52,16 @@ export function Footer({
               ['Investors', '#investors'],
               ['Contact', '#contact'],
             ].map(([label, href]) => (
-              <Link
+              <a
                 key={href}
                 href={
                   href.startsWith('/') ? href : `${sectionHrefPrefix}${href}`
                 }
               >
                 {label}
-              </Link>
+              </a>
             ))}
-            <Link href="/privacy">Privacy</Link>
+            <a href="/privacy">Privacy</a>
           </nav>
         </div>
         <div className="ea-footer__legal">

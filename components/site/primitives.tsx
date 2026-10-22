@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -95,7 +94,7 @@ export function ButtonLink({
   ...props
 }: ButtonProps) {
   return (
-    <Link
+    <a
       href={href}
       data-analytics-event={event}
       className={cn(
@@ -109,7 +108,7 @@ export function ButtonLink({
     >
       {children}
       <ArrowRight aria-hidden="true" size={15} strokeWidth={1.7} />
-    </Link>
+    </a>
   );
 }
 

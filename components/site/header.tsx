@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { Menu, ArrowUpRight } from 'lucide-react';
 import { contactConfig } from '@/components/site/content';
 
@@ -20,7 +19,7 @@ export function Header({
   return (
     <header className="ea-header">
       <div className="ea-container ea-header__row">
-        <Link href="/" aria-label="EA STORM homepage" className="ea-logo">
+        <a href="/" aria-label="EA STORM homepage" className="ea-logo">
           <Image
             alt="EA STORM — Keep What Matters Moving."
             src="/brand/ea-storm-gold.png"
@@ -29,7 +28,7 @@ export function Header({
             unoptimized
             priority
           />
-        </Link>
+        </a>
         <nav className="ea-desktop-nav" aria-label="Primary navigation">
           {links.map((l) => (
             <a

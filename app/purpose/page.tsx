@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
@@ -114,9 +113,9 @@ export default function PurposePage() {
               >
                 Request Demo <ArrowUpRight size={18} aria-hidden="true" />
               </a>
-              <Link className="ea-action ea-action--quiet-light" href="/">
+              <a className="ea-action ea-action--quiet-light" href="/">
                 <ArrowLeft size={18} aria-hidden="true" /> Back to EA STORM
-              </Link>
+              </a>
             </div>
           </div>
         </section>
