@@ -1,3 +1,48 @@
+/* V3.3 flagship film: scoped to the replacement product section. */
+.ea-film { background: #f5f1ea; }
+.ea-film__intro { margin-bottom: clamp(28px, 4vw, 56px); }
+.ea-film__player {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #0a0a0a;
+  color-scheme: dark;
+}
+.ea-film__player:focus-visible {
+  outline: 2px solid #14253e;
+  outline-offset: 5px;
+}
+.ea-film__player::cue {
+  color: #fff;
+  background: rgb(10 10 10 / 90%);
+}
+.ea-film__help { margin: 16px 0 0; color: #55514c; font-size: 14px; }
+.ea-film__transcript { margin-top: 18px; }
+.ea-film__transcript summary {
+  cursor: pointer;
+  width: fit-content;
+  min-height: 44px;
+  padding-block: 10px;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.ea-film__transcript .ea-prose { max-width: 760px; padding-block: 16px; }
+.ea-film__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 32px;
+}
+@media (max-width: 600px) {
+  .ea-film__footer { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .ea-film__footer .ea-action { width: 100%; }
+}
+
 /* Step 3 is scoped so the approved policy body keeps its existing treatment. */
 .ea-site,
 .ea-header,

@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import { AnalyticsListener } from '@/components/site/analytics-listener';
-import { AskStormExperience } from '@/components/site/ask-storm-experience';
+import { FlagshipFilm } from '@/components/site/flagship-film';
 import { CinematicThreshold } from '@/components/site/cinematic-threshold';
 import {
   caseStudyMetrics,
@@ -396,47 +396,19 @@ function PurposePreviewSection() {
 
 function AskStormSection() {
   return (
-    <Band
-      id="product-proof"
-      label="The product / Ask STORM"
-      className="ea-product ea-ask"
-    >
-      <div className="ea-editorial">
-        <h2>Ask STORM.</h2>
-        <div className="ea-prose">
-          <p className="ea-emphasis">Choose what is getting in the way.</p>
-          <p>See how EA STORM moves from signal to verified action.</p>
-        </div>
+    <Band id="product-proof" label="EA STORM / The film" className="ea-film">
+      <div className="ea-editorial ea-film__intro">
+        <h2 id="flagship-film-title">Meet STORM.</h2>
+        <p className="ea-lead" id="flagship-film-description">
+          See how EA STORM keeps what matters moving across the systems you already use.
+        </p>
       </div>
-      <p className="ea-note">
-        Illustrative product experience · Synthetic scenarios
-      </p>
-      <div className="ea-ask__experience">
-        <AskStormExperience demoHref={contactConfig.demoHref} />
-        <figure className="ea-ask__command">
-          <figcaption>
-            <p className="ea-label">Integrated operating context</p>
-            <h3>Operator Command Center</h3>
-          </figcaption>
-          <a
-            href="/product/command-center.webp"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Inspect the Operator Command Center screenshot"
-          >
-            <Image
-              src="/product/command-center.webp"
-              alt="Operator Command Center interface showing prioritized operational signals and execution work."
-              width={1536}
-              height={1024}
-              unoptimized
-              loading="lazy"
-            />
-          </a>
-          <p className="ea-note">
-            Governed organizational context—not a chatbot beside a dashboard.
-          </p>
-        </figure>
+      <FlagshipFilm />
+      <div className="ea-film__footer">
+        <p className="ea-note">The EA STORM flagship film · 1 minute 34 seconds</p>
+        <Action href={contactConfig.demoHref} event="platform_click">
+          Request Demonstration
+        </Action>
       </div>
     </Band>
   );
